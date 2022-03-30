@@ -104,6 +104,7 @@ class Steganography(Encryption):
                     break
             if second_for_loop:
                 break
+            i -= 1
 
     # hide plain text message within the cover image
     def __hideEncryptedMessage(self):
