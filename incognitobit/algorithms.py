@@ -65,25 +65,45 @@ class Steganography(Encryption):
         self.__bits_required_for_message_length = self.__cover_image_width - (self.__bits_required_for_stego_key + self.__bits_required_for_private_key)
         self.__getEncryptionPacket()
         index = 0
-        for i in range(-1, -((self.__cover_image_width // 8) + 1), -1):
+        i = -1
+        inner_loop = False
+        while True:
+            second_for_loop = False
             for j in range(3):
                 temp = list(map(int, list(format(self.__cover_image_arr[i][j], "08b"))))
                 if j == 0:
                     for k in range(3):
+                        if index == self.__cover_image_width:
+                            inner_loop = True
+                            break
                         temp[-(k + 1)] = self.__encryption_info[index]
                         index += 1
                 elif j == 1:
+                    if index == self.__cover_image_width:
+                        inner_loop = True
+                        break
                     temp[-4] = self.__encryption_info[index]
                     index += 1
                     for k in range(2):
+                        if index == self.__cover_image_width:
+                            inner_loop = True
+                            break
                         temp[-(k + 1)] = self.__encryption_info[index]
                         index += 1
                 else:
                     for k in range(2):
+                        if index == self.__cover_image_width:
+                            inner_loop = True
+                            break
                         temp[-(k + 3)] = self.__encryption_info[index]
                         index += 1
                 temp = list(map(str, temp))
                 self.__cover_image_arr[i][j] = int("".join(temp), 2)
+                if inner_loop:
+                    second_for_loop = True
+                    break
+            if second_for_loop:
+                break
 
     # hide plain text message within the cover image
     def __hideEncryptedMessage(self):
