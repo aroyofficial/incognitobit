@@ -277,15 +277,12 @@ class Application(Steganography):
         self.__about.place(x=1, y=72)
         self.__h1 = tk.Label(self.__about_tab, text="Hooghly Engineering and Technology College", font=("Terminal", 10, "bold"))
         self.__h1.place(x=50, y=1)
-        self.__about.insert(tk.INSERT, "\n               Hooghly Engineering and Technology College")
-        self.__about.insert(tk.INSERT, "\n(Affiliated to Maulana Abul Kalam Azad University of Technology, West Bengal)")
-        self.__about.insert(tk.INSERT, "\n             Department of Computer Science and Engineering\n")
+        self.__about.insert(tk.INSERT, """Enter text""")
         self.__about.configure(state=DISABLED)
-        self.__college_img = Image.open("images/hetc-transparent.png")
-        self.__college_img = self.__college_img.resize((60, 60))
+        self.__college_img = Image.open("images/about-banner.png")
         self.__college_img = ImageTk.PhotoImage(self.__college_img)
-        self.__college_logo = tk.Label(self.__about_tab, image=self.__college_img, height=60, width=60)
-        self.__college_logo.place(x=1, y=1)
+        self.__college_logo = tk.Label(self.__about_tab, image=self.__college_img)
+        self.__college_logo.place(x=2.5, y=1)
 
 # main function
 def main():
