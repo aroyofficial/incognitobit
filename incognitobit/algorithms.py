@@ -243,7 +243,6 @@ class Steganography(Encryption):
     def __makeProgress(self, value):
         self.__loading_bar['value'] = value
         self.__root.update_idletasks()
-        time.sleep(0.01)
 
     def _retrieveMessage(self, masterwidget, loadingbar):
         try:
