@@ -6,9 +6,10 @@ import math
 import os
 from pathlib import Path
 from incognitobit.encryption import Encryption
+from incognitobit.decryption import Decryption
 
 # custom exception for non-capable images
-class ImageNotCapableError(Exception):
+class ImageNotCapableError(Exception, Decryption):
     
     def __init__(self, msg):
         self.__msg = msg
@@ -20,8 +21,8 @@ class ImageNotCapableError(Exception):
 class Steganography(Encryption):
 
     # initialization of encryption object state
-    def __init__(self, path = False, msg = False):
-        if path is not False and msg is not False:
+    def __init__(self, path = None, msg = None):
+        if path is not None and msg is not None:
             try:
                 self.__stego_filename = os.path.basename(path)
                 self.__cover_image = Image.open(path, 'r')  # open cover image from the given path
@@ -37,11 +38,15 @@ class Steganography(Encryption):
                 self.__generateAuthorizationToken()  # get authorization token
                 self.__required_bits = (len(self.__plain_text) + 16) * 8  # stores the no. of pixels required to hide the message
                 self.__encrypted_msg = self.__encryption_object._encryptMessage(list(self.__token))
-            except FileNotFoundError:
-                print("File not found...")
-        if path is not False and msg is False:
-            print("case for decryption")
-            pass
+            except:
+                pass
+        if path is not None and msg is None:
+            try:
+                self.__stego_image = Image.open(path, 'r')
+                self.__stego_image_width, self.__stego_image_height = self.__stego_image.size
+                self.__stego_image_arr = np.array(list(self.__stego_image.getdata()))
+            except:
+                pass
 
     # generate stego key from the image width
     def __getStegoKey(self):
@@ -149,3 +154,78 @@ class Steganography(Encryption):
 
     def _saveStegoImage(self, filepath):
         self._stego_image.save(Path(filepath))
+
+    def __retrieveEncryptedText(self):
+        self.__encrypted_msg = []
+        for i in range(self.__stego_key, self.__stego_key + (self.__msg_length_in_bits // 8)):
+            index = 0
+            binstring = ''
+            for j in range(3):
+                temp = list(format(self.__stego_image_arr[i][j], '08b'))
+                if j == 0:
+                    for k in range(3):
+                        binstring += temp[-(k + 1)]
+                elif j == 1:
+                    binstring += temp[-4]
+                    for k in range(2):
+                        binstring += temp[-(k + 1)]
+                else:
+                    for k in range(2):
+                        binstring += temp[-(k + 3)]
+            self.__encrypted_msg.append(binstring)
+
+    def __getEncryptionInfo(self):
+        self.__encryption_info = []
+        index = 0
+        i = -1
+        inner_loop = False
+        while True:
+            second_for_loop = False
+            for j in range(3):
+                temp = list(format(self.__stego_image_arr[i][j], "08b"))
+                if j == 0:
+                    for k in range(3):
+                        if index == self.__stego_image_width:
+                            inner_loop = True
+                            break
+                        self.__encryption_info.append(temp[-(k + 1)])
+                        index += 1
+                elif j == 1:
+                    if index == self.__stego_image_width:
+                        inner_loop = True
+                        break
+                    self.__encryption_info.append(temp[-4])
+                    index += 1
+                    for k in range(2):
+                        if index == self.__stego_image_width:
+                            inner_loop = True
+                            break
+                        self.__encryption_info.append(temp[-(k + 1)])
+                        index += 1
+                else:
+                    for k in range(2):
+                        if index == self.__stego_image_width:
+                            inner_loop = True
+                            break
+                        self.__encryption_info.append(temp[-(k + 3)])
+                        index += 1
+                if inner_loop:
+                    second_for_loop = True
+                    break
+            if second_for_loop:
+                break
+            i -= 1
+        self.__private_key = int("".join(self.__encryption_info[:4]), 2)
+        temp = math.ceil(math.log(self.__stego_image_width, 2))
+        self.__stego_key = int("".join(self.__encryption_info[4: temp + 4]), 2)
+        self.__msg_length_in_bits = int("".join(self.__encryption_info[temp + 4:]), 2)
+
+    def _retrieveMessage(self):
+        self.__getEncryptionInfo()
+        self.__generateAuthorizationToken()
+        self.__retrieveEncryptedText()
+        self.__decryption_object = Decryption(self.__encrypted_msg, self.__private_key)
+        self.__decryptedText = self.__decryption_object._decryptMessage()
+        if self.__decryptedText[-(len(self.__token)):] == self.__token:
+            return self.__decryptedText[:-(len(self.__token))]
+        return ''
