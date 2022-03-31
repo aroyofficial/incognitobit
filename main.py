@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import CENTER, CHAR, DISABLED, WORD, filedialog
+from tkinter import CENTER, CHAR, DISABLED, INSERT, WORD, filedialog
 from tkinter import messagebox
 from tkinter import scrolledtext
 from tkinter.font import NORMAL
@@ -199,9 +199,16 @@ class Application(Steganography):
             messagebox.showerror("Error", "Upload an image for decryption")
             return
         self.__upload_stego_img_btn.configure(state=DISABLED)
-        self.__createLoadingbar()
+        self.__stego_object = Steganography(self.__stego_filepath)
+        self.__original_msg = self.__stego_object._retrieveMessage()
+        self.__decrypted_text.configure(state=NORMAL)
+        self.__decrypted_text.insert(INSERT, self.__original_msg)
+        self.__decrypted_text.configure(state=DISABLED)
+        # self.__createLoadingbar()
         if len(self.__decrypted_text.get(1.0, "end-1c")) == 0:
             messagebox.showinfo("Info", "No hidden message found")
+            self.__onClickresetButton()
+        messagebox.showinfo("Successfull", "Message retrieved successfully")
 
     #  retrieve message button in decryption tab
     def __retrieveMessageButton(self):
