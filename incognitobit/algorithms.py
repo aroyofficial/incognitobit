@@ -1,5 +1,6 @@
 import hashlib
 import random
+import time
 import numpy as np
 from PIL import Image
 import math
@@ -158,7 +159,6 @@ class Steganography(Encryption):
     def __retrieveEncryptedText(self):
         self.__encrypted_msg = []
         for i in range(self.__stego_key, self.__stego_key + (self.__msg_length_in_bits // 8)):
-            index = 0
             binstring = ''
             for j in range(3):
                 temp = list(format(self.__stego_image_arr[i][j], '08b'))
@@ -173,6 +173,8 @@ class Steganography(Encryption):
                     for k in range(2):
                         binstring += temp[-(k + 3)]
             self.__encrypted_msg.append(binstring)
+            progress = (i - self.__stego_key + 1) // ((self.__msg_length_in_bits // 8) / 100)
+            self.__makeProgress(progress)
 
     def __getEncryptionInfo(self):
         self.__encryption_info = []
@@ -220,13 +222,24 @@ class Steganography(Encryption):
         self.__stego_key = int("".join(self.__encryption_info[4: temp + 4]), 2)
         self.__msg_length_in_bits = int("".join(self.__encryption_info[temp + 4:]), 2)
 
-    def _retrieveMessage(self):
+    def __makeProgress(self, value):
+        self.__loading_bar['value'] = value
+        self.__root.update_idletasks()
+        time.sleep(0.01)
+
+    def _retrieveMessage(self, masterwidget, loadingbar):
         try:
+            self.__root = masterwidget
+            self.__loading_bar = loadingbar
+            self.__makeProgress(0)
             self.__getEncryptionInfo()
+            if self.__private_key < 8 or self.__stego_key > self.__stego_image_width:
+                return ''
             self.__generateAuthorizationToken()
             self.__retrieveEncryptedText()
             self.__decryption_object = Decryption(self.__encrypted_msg, self.__private_key)
             self.__decryptedText = self.__decryption_object._decryptMessage()
+            self.__makeProgress(100)
             if self.__decryptedText[-(len(self.__token)):] == self.__token:
                 return self.__decryptedText[:-(len(self.__token))]
             return ''
