@@ -19,7 +19,7 @@ class Encryption:
 
     # encrypt the plain text
     def _encryptMessage(self, token):
-        self.__plain_text += token
+        self.__plain_text = token + self.__plain_text
         self.__encrypted_msg = []
         for char in self.__plain_text:
             temp = (format(ord(char) // self.__private_key, "04b") + format(ord(char) % self.__private_key, "04b"))[::-1]
