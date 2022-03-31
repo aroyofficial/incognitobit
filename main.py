@@ -1,4 +1,3 @@
-import time
 import tkinter as tk
 from tkinter import CENTER, CHAR, DISABLED, INSERT, WORD, filedialog
 from tkinter import messagebox
@@ -14,6 +13,8 @@ class Application(Steganography):
     # application intializer for all tabs
     def __init__(self):
         try:
+            self.__buffer = 'None'
+            self.__cover_filepath = 'None'
             self.__app = tk.Tk()
             self.__app.geometry('600x360')
             self.__app.title("An Enchanced Method for Information hiding using LSB Steganography")
@@ -61,8 +62,10 @@ class Application(Steganography):
 
     # action on clicking upload button in encryption tab
     def __onClickuploadCoverImageButton(self):
-        self.__cover_filepath = str(filedialog.askopenfile(filetypes=[("PNG Images", "*.png")]))
-        if self.__cover_filepath == "None":
+        self.__buffer = str(filedialog.askopenfile(filetypes=[("PNG Images", "*.png")]))
+        if (self.__buffer == "None" and self.__cover_filepath == "None") or self.__buffer != "None":
+            self.__cover_filepath = self.__buffer
+        else:
             return
         self.__cover_filepath = self.__cover_filepath[self.__cover_filepath.find("'") + 1:]
         self.__cover_filepath = self.__cover_filepath[:self.__cover_filepath.find("'")]
@@ -198,7 +201,6 @@ class Application(Steganography):
 
     # action on clicking retrieve message button
     def __onClickRetrieveMessageButton(self):
-        self.__app.config(cursor="none")
         if self.__stego_filepath is None or self.__stego_filepath == "None":
             messagebox.showerror("Error", "Upload an image for decryption")
             return
@@ -209,7 +211,6 @@ class Application(Steganography):
         self.__decrypted_text.configure(state=NORMAL)
         self.__decrypted_text.insert(INSERT, self.__original_msg)
         self.__decrypted_text.configure(state=DISABLED)
-        self.__app.config(cursor="arrow")
         if len(self.__decrypted_text.get(1.0, "end-1c")) == 0:
             messagebox.showinfo("Info", "No hidden message found")
             self.__onClickResetButton()
