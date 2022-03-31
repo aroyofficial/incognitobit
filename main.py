@@ -1,3 +1,4 @@
+import time
 import tkinter as tk
 from tkinter import CENTER, CHAR, DISABLED, INSERT, WORD, filedialog
 from tkinter import messagebox
@@ -176,8 +177,10 @@ class Application(Steganography):
         self.__createDecryptionCanvas()
         self.__uploadStegoImageButton()
         self.__retrieveMessageButton()
-        self.__resetButton(self.__decryption_tab, 260, 270)
-        self.__exitButton(self.__decryption_tab, 340, 270)
+        self.__createSaveTextButton()
+        self.__createLoadingBar()
+        self.__resetButton(self.__decryption_tab, 172.5, 272.5)
+        self.__exitButton(self.__decryption_tab, 270, 272.5)
 
     # generate frames in decryption tab
     def __createDecryptionCanvas(self):
@@ -195,26 +198,29 @@ class Application(Steganography):
 
     # action on clicking retrieve message button
     def __onClickRetrieveMessageButton(self):
+        self.__app.config(cursor="none")
         if self.__stego_filepath is None or self.__stego_filepath == "None":
             messagebox.showerror("Error", "Upload an image for decryption")
             return
+        self.__retrieve_btn.configure(state=DISABLED)
         self.__upload_stego_img_btn.configure(state=DISABLED)
         self.__stego_object = Steganography(self.__stego_filepath)
-        self.__original_msg = self.__stego_object._retrieveMessage()
+        self.__original_msg = self.__stego_object._retrieveMessage(self.__decryption_tab, self.__loading_bar)
         self.__decrypted_text.configure(state=NORMAL)
         self.__decrypted_text.insert(INSERT, self.__original_msg)
         self.__decrypted_text.configure(state=DISABLED)
-        # self.__createLoadingbar()
+        self.__app.config(cursor="arrow")
         if len(self.__decrypted_text.get(1.0, "end-1c")) == 0:
             messagebox.showinfo("Info", "No hidden message found")
             self.__onClickResetButton()
         else:
             messagebox.showinfo("Successfull", "Message retrieved successfully")
+            self.__save_text_btn.configure(state=NORMAL)
 
     #  retrieve message button in decryption tab
     def __retrieveMessageButton(self):
         self.__retrieve_btn = tk.Button(self.__decryption_tab, text="Retrieve Message", command=self.__onClickRetrieveMessageButton)
-        self.__retrieve_btn.place(x=410, y=270)
+        self.__retrieve_btn.place(x=355, y=272.5)
 
     # action on clciking stego image upload button
     def __onClickuploadStegoImageButton(self):
@@ -232,14 +238,35 @@ class Application(Steganography):
     # upload stego image button
     def __uploadStegoImageButton(self):
         self.__upload_stego_img_btn = tk.Button(self.__decryption_tab, text="Upload Image", command=self.__onClickuploadStegoImageButton)
-        self.__upload_stego_img_btn.place(x=130, y=270)
+        self.__upload_stego_img_btn.place(x=35, y=272.5)
 
-    # create loading bar in decryption tab (may be deprecated in future versions)
-    def __createLoadingbar(self):
-        self.__loading_bar = ttk.Progressbar(self.__decryption_tab, orient="horizontal", length=598, value=0)
-        self.__loading_bar.place(x=1, y=313)
-        self.__loading_bar.start()
-        self.__loading_bar.step(10)
+    # action on clicking save text button
+    def __onClickSaveTextButton(self):
+        self.__msg_filepath = str(filedialog.asksaveasfile(initialfile = 'message.txt', defaultextension=".txt",filetypes=[("Text Files","*.txt")]))
+        if self.__msg_filepath == "None":
+            return
+        self.__msg_filepath = self.__msg_filepath[self.__msg_filepath.find("'") + 1:]
+        self.__msg_filepath = self.__msg_filepath[:self.__msg_filepath.find("'")]
+        with open(self.__msg_filepath, 'w+') as f:
+            f.write(self.__decrypted_text.get(1.0, "end-1c"))
+        f.close()
+        messagebox.showinfo("Successfull", "Message saved successfully")
+        self.__onClickResetButton()
+
+    # save text button
+    def __createSaveTextButton(self):
+        self.__save_text_btn = tk.Button(self.__decryption_tab, text="Save Message", command=self.__onClickSaveTextButton)
+        self.__save_text_btn.place(x=490, y=272.5)
+        self.__save_text_btn.configure(state=DISABLED)
+
+    def __createLoadingBar(self):
+        self.__loading_bg_frame = tk.Frame(self.__decryption_tab, background="red", height=30, width=600)
+        self.__loading_bg_frame.pack()
+        self.__loading_bg_frame.pack_propagate(0)
+        self.__loading_bg_frame.place(x=0, y=308)
+        self.__loading_bar = ttk.Progressbar(self.__decryption_tab, orient="horizontal", length=592, value=0)
+        self.__loading_bar.place(x=1.5, y=310)
+        self.__loading_bar['value'] = 0
 
     # create about tab
     def __createAboutTab(self):
