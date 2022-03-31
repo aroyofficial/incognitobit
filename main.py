@@ -85,7 +85,7 @@ class Application(Steganography):
         self.__stego_filepath = self.__stego_filepath[:self.__stego_filepath.find("'")]
         self.__stego_object._saveStegoImage(self.__stego_filepath)
         messagebox.showinfo("Successfull", "Stego Image saved successfully")
-        self.__onClickresetButton()
+        self.__onClickResetButton()
 
     # stego image button in encryption tab
     def __saveStegoImageButton(self):
@@ -122,13 +122,13 @@ class Application(Steganography):
         self.__upload_txt_btn.place(x=16, y=260)
 
     # action on clicking reset button
-    def __onClickresetButton(self):
+    def __onClickResetButton(self):
         self.__app.destroy()
         self.__init__()
 
     # reset button
     def __resetButton(self, parent_widget, padding_left, padding_top):
-        self.__reset_btn = tk.Button(parent_widget, text="Reset", command=self.__onClickresetButton)
+        self.__reset_btn = tk.Button(parent_widget, text="Reset", command=self.__onClickResetButton)
         self.__reset_btn.place(x=padding_left, y=padding_top)
 
     # stick stego image on stego panel label for preview
@@ -153,7 +153,7 @@ class Application(Steganography):
         self.__status = self.__stego_object._generateStegoImage()
         if self.__status != "Stego Image generated successfully":
             messagebox.showerror("Error", self.__status)
-            self.__onClickresetButton()
+            self.__onClickResetButton()
         else:
             self.__stickStegoImage()
             messagebox.showinfo("Successfull", self.__status)
@@ -194,7 +194,7 @@ class Application(Steganography):
         self.__stego_image_fg_frame.place(x=2, y=2)
 
     # action on clicking retrieve message button
-    def __onClickretrieveMessageButton(self):
+    def __onClickRetrieveMessageButton(self):
         if self.__stego_filepath is None or self.__stego_filepath == "None":
             messagebox.showerror("Error", "Upload an image for decryption")
             return
@@ -207,12 +207,13 @@ class Application(Steganography):
         # self.__createLoadingbar()
         if len(self.__decrypted_text.get(1.0, "end-1c")) == 0:
             messagebox.showinfo("Info", "No hidden message found")
-            self.__onClickresetButton()
-        messagebox.showinfo("Successfull", "Message retrieved successfully")
+            self.__onClickResetButton()
+        else:
+            messagebox.showinfo("Successfull", "Message retrieved successfully")
 
     #  retrieve message button in decryption tab
     def __retrieveMessageButton(self):
-        self.__retrieve_btn = tk.Button(self.__decryption_tab, text="Retrieve Message", command=self.__onClickretrieveMessageButton)
+        self.__retrieve_btn = tk.Button(self.__decryption_tab, text="Retrieve Message", command=self.__onClickRetrieveMessageButton)
         self.__retrieve_btn.place(x=410, y=270)
 
     # action on clciking stego image upload button

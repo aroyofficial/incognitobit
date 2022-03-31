@@ -221,11 +221,14 @@ class Steganography(Encryption):
         self.__msg_length_in_bits = int("".join(self.__encryption_info[temp + 4:]), 2)
 
     def _retrieveMessage(self):
-        self.__getEncryptionInfo()
-        self.__generateAuthorizationToken()
-        self.__retrieveEncryptedText()
-        self.__decryption_object = Decryption(self.__encrypted_msg, self.__private_key)
-        self.__decryptedText = self.__decryption_object._decryptMessage()
-        if self.__decryptedText[-(len(self.__token)):] == self.__token:
-            return self.__decryptedText[:-(len(self.__token))]
-        return ''
+        try:
+            self.__getEncryptionInfo()
+            self.__generateAuthorizationToken()
+            self.__retrieveEncryptedText()
+            self.__decryption_object = Decryption(self.__encrypted_msg, self.__private_key)
+            self.__decryptedText = self.__decryption_object._decryptMessage()
+            if self.__decryptedText[-(len(self.__token)):] == self.__token:
+                return self.__decryptedText[:-(len(self.__token))]
+            return ''
+        except:
+            return ''
