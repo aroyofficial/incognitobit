@@ -10,7 +10,6 @@ class Decryption:
         for binstring in received_token:
             binstring = binstring[::-1]
             self.__token.append(chr(int(binstring[:4], 2) * self.__private_key + int(binstring[4:], 2)))
-        temp = "".join(self.__token)
         if "".join(self.__token) == original_token:
             return True
         return False
