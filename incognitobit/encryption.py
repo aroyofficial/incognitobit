@@ -5,6 +5,7 @@ class Encryption:
     def __init__(self, msg):
         self.__plain_text = msg
 
+    # generate private key
     def _getPrivateKey(self):
         while True:
             self.__r = random.randint(1, len(self.__plain_text))
