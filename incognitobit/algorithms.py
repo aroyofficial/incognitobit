@@ -156,9 +156,27 @@ class Steganography(Encryption):
     def _saveStegoImage(self, filepath):
         self._stego_image.save(Path(filepath))
 
+    def __getToken(self):
+        self.__received_token = []
+        for i in range(self.__stego_key, self.__stego_key + 16):
+            binstring = ''
+            for j in range(3):
+                temp = list(format(self.__stego_image_arr[i][j], '08b'))
+                if j == 0:
+                    for k in range(3):
+                        binstring += temp[-(k + 1)]
+                elif j == 1:
+                    binstring += temp[-4]
+                    for k in range(2):
+                        binstring += temp[-(k + 1)]
+                else:
+                    for k in range(2):
+                        binstring += temp[-(k + 3)]
+            self.__received_token.append(binstring)
+
     def __retrieveEncryptedText(self):
         self.__encrypted_msg = []
-        for i in range(self.__stego_key, self.__stego_key + (self.__msg_length_in_bits // 8)):
+        for i in range(self.__stego_key + 16, self.__stego_key + (self.__msg_length_in_bits // 8)):
             binstring = ''
             for j in range(3):
                 temp = list(format(self.__stego_image_arr[i][j], '08b'))
@@ -173,7 +191,7 @@ class Steganography(Encryption):
                     for k in range(2):
                         binstring += temp[-(k + 3)]
             self.__encrypted_msg.append(binstring)
-            progress = (i - self.__stego_key + 1) // ((self.__msg_length_in_bits // 8) / 100)
+            progress = (i - self.__stego_key + 16 + 1) // ((self.__msg_length_in_bits // 8) / 100)
             self.__makeProgress(progress)
 
     def __getEncryptionInfo(self):
@@ -236,12 +254,13 @@ class Steganography(Encryption):
             if self.__private_key < 8 or self.__stego_key > self.__stego_image_width:
                 return ''
             self.__generateAuthorizationToken()
+            self.__getToken()
+            self.__decryption_object = Decryption()
+            if not self.__decryption_object._matchToken(self.__received_token, self.__token, self.__private_key):
+                return ''
             self.__retrieveEncryptedText()
-            self.__decryption_object = Decryption(self.__encrypted_msg, self.__private_key)
-            self.__decryptedText = self.__decryption_object._decryptMessage()
+            self.__decryptedText = self.__decryption_object._decryptMessage(self.__encrypted_msg)
             self.__makeProgress(100)
-            if self.__decryptedText[-(len(self.__token)):] == self.__token:
-                return self.__decryptedText[:-(len(self.__token))]
-            return ''
+            return self.__decryptedText
         except:
             return ''
