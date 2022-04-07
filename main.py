@@ -7,6 +7,7 @@ import tkinter.ttk as ttk
 from tkinter.messagebox import *
 from PIL import ImageTk, Image
 from incognitobit.algorithms import Steganography
+from IPython.display import HTML
 
 class Application(Steganography):
 
@@ -17,7 +18,7 @@ class Application(Steganography):
             self.__cover_filepath = 'None'
             self.__app = tk.Tk()
             self.__app.geometry('600x360')
-            self.__app.title("An Enchanced Method for Information hiding using LSB Steganography")
+            self.__app.title("IncognitoBit")
             self.__app.resizable(False, False)
             self.__app.iconbitmap('images/title.ico')
             self.__tabs = ttk.Notebook(self.__app)
@@ -29,7 +30,7 @@ class Application(Steganography):
             self.__stego_filepath = None
             self.__app.mainloop() 
         except:
-            messagebox.showerror("Error", "Oops! some error has occurred")
+            messagebox.showerror("IncognitoBit", "Oops! some error has occurred")
             self.__init__()
 
     # create encryption tab
@@ -88,7 +89,7 @@ class Application(Steganography):
         self.__stego_filepath = self.__stego_filepath[self.__stego_filepath.find("'") + 1:]
         self.__stego_filepath = self.__stego_filepath[:self.__stego_filepath.find("'")]
         self.__stego_object._saveStegoImage(self.__stego_filepath)
-        messagebox.showinfo("Successfull", "Stego Image saved successfully")
+        messagebox.showinfo("IncognitoBit", "Stego Image saved successfully")
         self.__onClickResetButton()
 
     # stego image button in encryption tab
@@ -144,10 +145,10 @@ class Application(Steganography):
     # action on clicking stego generate button
     def __onClickStegoGenerateButton(self):
         if self.__cover_filepath is None or self.__cover_filepath == "None":
-            messagebox.showerror("Error", "Must upload a cover image")
+            messagebox.showerror("IncognitoBit", "Must upload a cover image")
             return
         if len(self.__message.get(1.0, "end-1c")) == 0:
-            messagebox.showerror("Error", "Must enter some message or upload text file to be hidden")
+            messagebox.showerror("IncognitoBit", "Must enter some message or upload text file to be hidden")
             return
         self.__message.configure(state="disabled")
         self.__upload_img_btn["state"] = DISABLED
@@ -156,11 +157,11 @@ class Application(Steganography):
         self.__stego_object = Steganography(self.__cover_filepath, self.__message.get(1.0, "end-1c"))
         self.__status = self.__stego_object._generateStegoImage()
         if self.__status != "Stego Image generated successfully":
-            messagebox.showerror("Error", self.__status)
+            messagebox.showerror("IncognitoBit", self.__status)
             self.__onClickResetButton()
         else:
             self.__stickStegoImage()
-            messagebox.showinfo("Successfull", self.__status)
+            messagebox.showinfo("IncognitoBit", self.__status)
             self.__save_stego_img_btn["state"] = NORMAL
 
     # stego image generate button
@@ -202,7 +203,7 @@ class Application(Steganography):
     # action on clicking retrieve message button
     def __onClickRetrieveMessageButton(self):
         if self.__stego_filepath is None or self.__stego_filepath == "None":
-            messagebox.showerror("Error", "Upload an image for decryption")
+            messagebox.showerror("IncognitoBit", "Upload an image for decryption")
             return
         self.__retrieve_btn.configure(state=DISABLED)
         self.__upload_stego_img_btn.configure(state=DISABLED)
@@ -212,10 +213,10 @@ class Application(Steganography):
         self.__decrypted_text.insert(INSERT, self.__original_msg)
         self.__decrypted_text.configure(state=DISABLED)
         if len(self.__decrypted_text.get(1.0, "end-1c")) == 0:
-            messagebox.showinfo("Info", "No hidden message found")
+            messagebox.showinfo("IncognitoBit", "No hidden message found")
             self.__onClickResetButton()
         else:
-            messagebox.showinfo("Successfull", "Message retrieved successfully")
+            messagebox.showinfo("IncognitoBit", "Message retrieved successfully")
             self.__save_text_btn.configure(state=NORMAL)
 
     #  retrieve message button in decryption tab
@@ -251,7 +252,7 @@ class Application(Steganography):
         with open(self.__msg_filepath, 'w+') as f:
             f.write(self.__decrypted_text.get(1.0, "end-1c"))
         f.close()
-        messagebox.showinfo("Successfull", "Message saved successfully")
+        messagebox.showinfo("IncognitoBit", "Message saved successfully")
         self.__onClickResetButton()
 
     # save text button
@@ -275,9 +276,21 @@ class Application(Steganography):
         self.__tabs.add(self.__about_tab, text="About")
         self.__about = scrolledtext.ScrolledText(self.__about_tab, width=72, height=16, wrap=tk.WORD)
         self.__about.place(x=1, y=72)
-        self.__h1 = tk.Label(self.__about_tab, text="Hooghly Engineering and Technology College", font=("Terminal", 10, "bold"))
-        self.__h1.place(x=50, y=1)
-        self.__about.insert(tk.INSERT, """Enter text""")
+        self.__license_text = open('LICENSE.md', 'r')
+        count = 0
+        while True:
+            count += 1
+            line = self.__license_text.readline()
+            if not line:
+                break
+            if count == 1:
+                self.__about.insert(tk.INSERT, '                              ' + line.strip() + '\n')
+            elif count == 2:
+                self.__about.insert(tk.INSERT, '                        ' + line.strip() + '\n')
+            elif count == 3:
+                self.__about.insert(tk.INSERT, '                     ' + line.strip() + '\n')
+            else:
+                self.__about.insert(tk.INSERT, line.strip() + '\n')
         self.__about.configure(state=DISABLED)
         self.__college_img = Image.open("images/about-banner.png")
         self.__college_img = ImageTk.PhotoImage(self.__college_img)
