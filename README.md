@@ -6,15 +6,15 @@
 University Roll No. – 17600118067<br>
 Academic Year 2021-‘22<br>
 
-<a href="https://www.linkedin.com/in/royarkaofficial/" target="_blank" rel="noopener noreferrer">Arkadeep Roy</a>, CSE Dept., 7th Semester<br>
+[Arkadeep Roy](https://www.linkedin.com/in/royarkaofficial/), CSE Dept., 7th Semester<br>
 University Roll No. – 17600118065<br>
 Academic Year 2021-‘22<br>
 
-<a href="https://www.linkedin.com/in/abasuofficial/" target="_blank" rel="noopener noreferrer">Arkadip Basu Mallick</a>, CSE Dept., 7th Semester<br>
+[Arkadip Basu Mallick](https://www.linkedin.com/in/abasuofficial/), CSE Dept., 7th Semester<br>
 University Roll No. – 17600118064<br>
 Academic Year 2021-‘22<br>
 
-<a href="https://www.linkedin.com/in/shayaniofficial/" target="_blank" rel="noopener noreferrer">Shayani Das</a>, CSE Dept., 7th Semester<br>
+[Shayani Das](https://www.linkedin.com/in/shayaniofficial/), CSE Dept., 7th Semester<br>
 University Roll No. – 17600118029<br>
 Academic Year 2021-‘22<br>
 
