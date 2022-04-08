@@ -31,7 +31,7 @@ class Application(Steganography):
             self.__app.mainloop() 
         except:
             messagebox.showerror("IncognitoBit", "Oops! some error has occurred")
-            self.__init__()
+            self.__app.destroy()
 
     # create encryption tab
     def __createEncryptionTab(self):
