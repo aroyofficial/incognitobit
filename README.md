@@ -4,19 +4,19 @@
 It gives us immense pleasure to announce the completion of our project on <b>“An Enchanced Method for Information Hiding using Cryptography And Stenganography”</b> and we are pleased to acknowledge our indebtedness to all the persons who directly or indirectly contributed in the development of this work and who influenced our thinking, behavior and acts during the course of study. We are thankful to our <b><i>departmental Coordinator professor <a href="https://www.hetc.ac.in/faculty/dibyendu-samanta/">Mr. Dibyendu Samanta</a></i> (Assistant Professor and Coordinator, <a href="https://www.hetc.ac.in/">Hooghly Engineering and Technology College</a>)</b> who granted all the facilities of the college to us for the fulfilment of the project. We are thankful and express our sincere gratitude to our project guide <b><i>Mr. Dibyendu Samanta</i></b> who gave his/her valuable time to us for the sake of our project. He helped us each and every aspect of our project both academically and mentally. Finally, the team expressed their gratitude to our <b><i>respected Principal-In-Charge <a href="https://www.hetc.ac.in/faculty/smitadhi-ganguly/">Dr. Smitadhi Ganguly</a></i></b>. Without his support our project would not have seen the light of success.
 </p>
 
-> [Arijit Roy](https://www.linkedin.com/in/mr-arijit-roy/), CSE Dept., 7th Semester<br>
+> [Arijit Roy](https://www.linkedin.com/in/mr-arijit-roy/), CSE Dept., 8<sup>th</sup> Semester<br>
 > University Roll No. – 17600118067<br>
 > Academic Year 2021-‘22<br>
 
-> [Arkadeep Roy](https://www.linkedin.com/in/royarkaofficial/), CSE Dept., 7th Semester<br>
+> [Arkadeep Roy](https://www.linkedin.com/in/royarkaofficial/), CSE Dept., 8<sup>th</sup> Semester<br>
 > University Roll No. – 17600118065<br>
 > Academic Year 2021-‘22<br>
 
-> [Arkadip Basu Mallick](https://www.linkedin.com/in/abasuofficial/), CSE Dept., 7th Semester<br>
+> [Arkadip Basu Mallick](https://www.linkedin.com/in/abasuofficial/), CSE Dept., 8<sup>th</sup> Semester<br>
 > University Roll No. – 17600118064<br>
 > Academic Year 2021-‘22<br>
 
-> [Shayani Das](https://www.linkedin.com/in/shayaniofficial/), CSE Dept., 7th Semester<br>
+> [Shayani Das](https://www.linkedin.com/in/shayaniofficial/), CSE Dept., 8<sup>th</sup> Semester<br>
 > University Roll No. – 17600118029<br>
 > Academic Year 2021-‘22<br>
 
@@ -163,11 +163,59 @@ In modern steganography, especially digital steganography becomes popular and st
 <p align="center">Figure VI. Steganography Techniques</p>
 <p align="justify">
 Within these techniques, spatial and transform domain techniques are mostly used.<br>
-<ul>
-  <li>   Image Steganography</li>
-  <b>a) LSB</b> stands for Least Significant Bit steganography. In this technique, least significant bits are replaced with the message bits so that the minimum distortion will be resulted in the cover medium and which is imperceptible to the human eye. In Figure III an example is given
-</ul>
 </p>
+<ul>
+  <li><b>Image Steganography</b></li>
+  <p align="justify">
+  <br><b>a) LSB</b> stands for Least Significant Bit steganography. In this technique, least significant bits are replaced with the message bits so that the minimum  distortion will be resulted in the cover medium and which is imperceptible to the human eye. In Figure VII an example is given.
+  </p>
+  <center>&emsp;&emsp;&emsp;&emsp;<img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-7.png"></img></center>
+  <p align="center"><br>Figure VII. LSB Steganography on Lena Image</p>
+  <p align="justify">
+  <b>b) PVD</b> stands for Pixel Value Differencing. Two pixels are chosen from the cover medium and it is checked that whether they are belonging to the smooth area 
+  or an edge. Then the distortion is calculated by the pixel value difference. Then the message bit is hidden on those pixels.<br>
+  <b>c) BPC</b> stands for Binary Complexity Pattern analysis. In this technique the message bits are changed into binary pattern and then the noisy area of the cover   medium is replaced by this pattern. The Human visual system has such a special property that a too-complicated visual pattern cannot be perceived as "shape-     
+  informative." For example, on a very flat beach shore every single square-foot area looks the same - it is just a sandy area, no shape is observed. However, if
+  you look carefully, two same-looking areas are entirely different in their sand particle shapes. BPCS-steganography makes use of this property. It replaces complex   
+  areas on the bit-planes of the vessel image with other complex data patterns (i.e., pieces of secret files). This replacing operation is called "embedding." No one 
+  can see any difference between the two vessel images of before and after the embedding operation.<br>
+  An issue arises where the data to be embedded appears visually as simple information, if this simple information replaces the complex information in the original 
+  image, it may create spurious 'real image information'. In this case the data is passed through a [binary image conjugation transformation], in order to create a 
+  reciprocal complex representation.<br>
+  <b>d) DCT</b> stands for Discrete Cosine Transform. In this technique, cover medium like image is transformed into frequency domain from spatial domain. Using this     technique, an image is broken into basic images as sinusoidal function. During the process, the secret message is hidden in DCT coefficients. A discrete cosine 
+  transform (DCT) expresses a finite sequence of data points in terms of a sum of cosine functions oscillating at different frequencies. The DCT, first proposed by  
+  Nasir Ahmed in 1972, is a widely used transformation technique in signal processing and data compression. It is used in most digital media, including digital images 
+  (such as JPEG and HEIF, where small high-frequency components can be discarded), digital video (such as MPEG and H.26x), digital audio (such as Dolby Digital, MP3 
+  and AAC), digital television (such as SDTV, HDTV and VOD), digital radio (such as AAC+ and DAB+), and speech coding (such as AACLD, Siren and Opus).<br>
+  <b>e) DFT</b> stands for Discrete Fourier Transform. This is also similar as the previous technique. The discrete Fourier transform (DFT) converts a finite sequence 
+  of equally-spaced samples of a function into a same-length sequence of equally-spaced samples of the discrete-time Fourier transform (DTFT), which is a complex-
+  valued function of frequency. The interval at which the DTFT is sampled is the reciprocal of the duration of the input sequence.<br>
+  <b>f) DWT</b> stands for Discrete Wavelet Transform. It is any wavelet transform for which the wavelets are discretely sampled. In this technique the high and low 
+  frequency regions of an image is detected and based on it the message is hidden in a particular portion which results in a minimum distortion. As with other wavelet 
+  transforms, a key advantage it has over Fourier transforms been temporal resolution: it captures both frequency and location information (location in time). These 
+  all techniques are used to implement steganography but not directly. Some algorithm is used with these techniques to make it stronger and variant. These 
+  steganographic algorithms must assure some parameters like PSNR (Peak Signal to Noise Ration), MSE (Mean Squared Error), imperceptibility, bit error rate, 
+  robustness, etc. to make sure that it is a secure algorithm. 
+  </p>
+  <li><b>Audio Steganography</b></li>
+  <p align="justify">
+  <br>In audio steganography, secret message is embedded into digitized audio signal which result slight altering of binary sequence of the corresponding audio file. There 
+  are several methods are available for audio steganography. Some of them are as follows -<br>
+  <b>a) Phase coding</b> is a scheme where the phase of carrier file is replaced with reference phase which represents hidden data. In parity coding signals are 
+  divided into regions, then parity bit of each region calculated and matched with secret message bit. Depending on parity matching result encoding is done.<br>
+  <b>b) Spread spectrum</b> technique spreads hidden data through the frequency spectrum. Spread spectrum (SS) is a concept developed in data communications to ensure 
+  a proper recovery of a signal sent over a noisy channel by producing redundant copies of the data signal. Basically, data are multiplied by an M-sequence code known 
+  to both sender and receiver, then hidden in the cover audio. Thus, if noise corrupts some values, there will still be copies of each value left to recover the hidden 
+  message. In conventional direct sequence spread spectrum (DSSS) technique was applied to hide confidential information in MP3 and WAV signals. Spread spectrum is
+  combined to phase shifting in order to increase the robustness of transmitted data against additive noise and to allow easy detection of the hidden data.   
+  Appropriately chosen sub-band coefficients were selected to address robustness and resolve synchronization uncertainty at the decoder.<br>
+  <b>c) Tone coding</b> focuses on the frequency masking in audio by using tone insertion method. Inserting tones at known frequencies and at low power level (depends 
+  on the original audio power) then modulate the secret massage into this inserted tone. The hidden information is imperceptible so a listener is unable to distinguish 
+  between the cover- and the stego-audio signal. So, the cover is audio and the hidden data (secret massage) is the English language text document. The proposed method 
+  focuses on the payload of the host audio with no disruption of robustness and imperceptible. The payload has been increased using new algorithm relay on new stego-
+  table and using frequent pattern detection into ANSI code. Also, there are other techniques like Wavelet coefficient, low bit encoding, echo coding, etc.
+  </p>
+</ul>
   
 <a name="desc-9"></a>
 ## Proposed Method
