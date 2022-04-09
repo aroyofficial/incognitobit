@@ -1,3 +1,9 @@
+# Project IncognitoBit
+
+This project comes with a **_GUI_** using which users can hide any message within an image and also they can retrieve the message from a stego image (which contains a message). This project **_implements a secure steganographic algorithm_** which is described in this document.
+
+# Project Description
+
 # Acknowledgement
 
 <p align=justify>
@@ -326,7 +332,7 @@ After embedding secret image in the cover image, it will become a stego image. T
     6. Take 4 LSB bits of each red, green, blue pixels of the stego image.<br>
     7. Obtain the position of embedded bits of the secret data in a cyclic order.<br>
     8. Retrieve the bits using these positions in the order of 3,3,2 respectively, using the position btained from step 7.<br>
-    9. if authentication token matched then reconstruct the secret information otherwise print that image does not contain any message.<br>
+    9. If authentication token matched then reconstruct the secret information from algorithm of decryption otherwise print that image does not contain any message.<br>
     10. Repeat steps 3 to 5 until all pixels of secret image embedded are retrieved.<br>
   </p>
 </ul>
@@ -366,10 +372,3 @@ The strength of Steganography lies in the sheer amount of information that chang
 <a name="p-9"></a>
 [9] G.R.Manjula and Ajit Danti; A Novel Hash Based Least Significant Bit (2-3-3) Image Steganography in Spatial Domain. International Journal of Security, Privacy and Trust Management (IJSPTM) Vol 4, No 1, February 2015.
 </p>
-  
-# Project IncognitoBit
-
-This project comes with a **_GUI_** using which users can hide any message within an image and also they can retrieve the message from a stego image (which contains a message). This project **_implements a secure steganographic algorithm_** which is described in this document.
-
-# Project Description
-
