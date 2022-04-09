@@ -111,6 +111,11 @@ Until modern times cryptography referred almost exclusively to encryption, which
 
 <a name="desc-6"></a>
 ## Types of Cryptography
+Modern Cryptography is of 3 types.<br><br>
+<img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-1.png" style="display: block; margin-left: auto; margin-right: auto; width: 50%;"></img>
+<br><b>a) Symmetric / Public key cryptography</b> is a group of cryptographic algorithms where using the same key a message is encrypted on the sender side and decrypted on the receiver side. The encryption and decryption key are same; that is why this is known as public key cryptography. Again, this type of cryptography is divided into two different types. One is block cipher (plain text is divided into fixed or variable length of blocks and encryption is applied on each and every block) and another is stream cipher (a stream of keys is generated and then using them encryption is applied). This was the only kind of encryption publicly known until June 1976.Only agents with the secret key can encrypt or decrypt the data. Some popular symmetric key cryptographic algorithms are AES, DES, etc. An example is given in Figure II.
+
+
 
 <a name="desc-7"></a>
 ## Overview of Steganography
