@@ -142,6 +142,14 @@ Even though the goal has been the same, the methods and techniques of cryptanaly
 
 <a name="desc-7"></a>
 ## Overview of Steganography
+<p align="justify">
+The word ‘steganography’ originated from the Greek word ‘steganographia’. This word was first ever founded in the year 1499 in the book of a Greek author named Johannes Trithemius. This word is basically a combination of two separate words. ‘steganos’ means hiding or hiding within something and ‘graphia’ means writing. So, steganography is the practice of hiding messages inside any medium, etc. The particular medium such as text, image, audio, video within which the message is to be hidden is known as cover medium. To provide an extra layer of security, the original message is also changed into some secret message and then it is hidden inside the cover medium. Steganography based communication over easily accessible platforms to prevent leakage of information. Here, embedding of information in a cover image is shown below:
+</p>
+<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-4.png"></img></center>
+<p align="center">Figure IV. Stego System</p>
+<p align="justify">
+Information is added by the sender and if the receiver wants to get the original image, then he needs to extract the embedded image with the help of the secret information provided by the sender. When the receiver will receive the file will be in the embedded form and by extracting it he or she can use or read the original object file which is sent by the sender. This embedding of the binary code is different for the different types of the files.
+</p>
 
 <a name="desc-8"></a>
 ## Types of Steganography
