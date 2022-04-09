@@ -4,19 +4,19 @@
 It gives us immense pleasure to announce the completion of our project on <b>“An Enchanced Method for Information Hiding using Cryptography And Stenganography”</b> and we are pleased to acknowledge our indebtedness to all the persons who directly or indirectly contributed in the development of this work and who influenced our thinking, behavior and acts during the course of study. We are thankful to our <b><i>departmental Coordinator professor <a href="https://www.hetc.ac.in/faculty/dibyendu-samanta/">Mr. Dibyendu Samanta</a></i> (Assistant Professor and Coordinator, <a href="https://www.hetc.ac.in/">Hooghly Engineering and Technology College</a>)</b> who granted all the facilities of the college to us for the fulfilment of the project. We are thankful and express our sincere gratitude to our project guide <b><i>Mr. Dibyendu Samanta</i></b> who gave his/her valuable time to us for the sake of our project. He helped us each and every aspect of our project both academically and mentally. Finally, the team expressed their gratitude to our <b><i>respected Principal-In-Charge <a href="https://www.hetc.ac.in/faculty/smitadhi-ganguly/">Dr. Smitadhi Ganguly</a></i></b>. Without his support our project would not have seen the light of success.
 </p>
 
-> [Arijit Roy](https://www.linkedin.com/in/mr-arijit-roy/), CSE Dept., 7th Semester<br>
+> [Arijit Roy](https://www.linkedin.com/in/mr-arijit-roy/), CSE Dept., 8<sup>th</sup> Semester<br>
 > University Roll No. – 17600118067<br>
 > Academic Year 2021-‘22<br>
 
-> [Arkadeep Roy](https://www.linkedin.com/in/royarkaofficial/), CSE Dept., 7th Semester<br>
+> [Arkadeep Roy](https://www.linkedin.com/in/royarkaofficial/), CSE Dept., 8<sup>th</sup> Semester<br>
 > University Roll No. – 17600118065<br>
 > Academic Year 2021-‘22<br>
 
-> [Arkadip Basu Mallick](https://www.linkedin.com/in/abasuofficial/), CSE Dept., 7th Semester<br>
+> [Arkadip Basu Mallick](https://www.linkedin.com/in/abasuofficial/), CSE Dept., 8<sup>th</sup> Semester<br>
 > University Roll No. – 17600118064<br>
 > Academic Year 2021-‘22<br>
 
-> [Shayani Das](https://www.linkedin.com/in/shayaniofficial/), CSE Dept., 7th Semester<br>
+> [Shayani Das](https://www.linkedin.com/in/shayaniofficial/), CSE Dept., 8<sup>th</sup> Semester<br>
 > University Roll No. – 17600118029<br>
 > Academic Year 2021-‘22<br>
 
@@ -165,9 +165,9 @@ In modern steganography, especially digital steganography becomes popular and st
 Within these techniques, spatial and transform domain techniques are mostly used.<br>
 </p>
 <ul>
-  <li>Image Steganography</li>
+  <li><b>Image Steganography</b></li>
   <p align="justify">
-  <b>a) LSB</b> stands for Least Significant Bit steganography. In this technique, least significant bits are replaced with the message bits so that the minimum  distortion will be resulted in the cover medium and which is imperceptible to the human eye. In Figure VII an example is given.
+  <br><b>a) LSB</b> stands for Least Significant Bit steganography. In this technique, least significant bits are replaced with the message bits so that the minimum  distortion will be resulted in the cover medium and which is imperceptible to the human eye. In Figure VII an example is given.
   </p>
   <center>&emsp;&emsp;&emsp;&emsp;<img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-7.png"></img></center>
   <p align="center"><br>Figure VII. LSB Steganography on Lena Image</p>
