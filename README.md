@@ -75,6 +75,18 @@ hash based 3-3-2 LSB insertion.
   
 <a name="desc-3"></a>
 ## System Requirements
+**Minimum Hardware Requirements**
+<pre>
+<b>Processor:</b> Intel Dual Core CPU @ 1.60 GHz
+<b>RAM:</b> 512 MB of RAM @ 1.60 GHz
+<b>Hard Disk:</b> 80 GB
+</pre>
+
+**Software Requirements**
+<pre>
+<b>Operating System:</b> Windows 7 / 8 / 10
+<b>Tool Used:</b> Python 3
+</pre>
 
 <a name="desc-4"></a>
 ## Theoretical Background
