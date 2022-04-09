@@ -153,7 +153,22 @@ Information is added by the sender and if the receiver wants to get the original
 
 <a name="desc-8"></a>
 ## Types of Steganography
-
+Based on the cover medium there are different types of steganography which are given below in the Figure V.
+<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-5.png"></img></center>
+<p align="center">Figure V. Types of Steganography</p>
+<p align="justify">
+In modern steganography, especially digital steganography becomes popular and stand apart from others. In digital steganography, different multimedia files are used to hide the message. Due to the large media file size; it is also hard to find the message within the cover medium. There are several techniques of doing the digital steganography. They are given below in the Figure VI.
+</p>
+<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-6.png"></img></center>
+<p align="center">Figure VI. Steganography Techniques</p>
+<p align="justify">
+Within these techniques, spatial and transform domain techniques are mostly used.<br>
+<ul>
+  <li>   Image Steganography</li>
+  <b>a) LSB</b> stands for Least Significant Bit steganography. In this technique, least significant bits are replaced with the message bits so that the minimum distortion will be resulted in the cover medium and which is imperceptible to the human eye. In Figure III an example is given
+</ul>
+</p>
+  
 <a name="desc-9"></a>
 ## Proposed Method
 
