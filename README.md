@@ -215,6 +215,33 @@ Within these techniques, spatial and transform domain techniques are mostly used
   focuses on the payload of the host audio with no disruption of robustness and imperceptible. The payload has been increased using new algorithm relay on new stego-
   table and using frequent pattern detection into ANSI code. Also, there are other techniques like Wavelet coefficient, low bit encoding, echo coding, etc.
   </p>
+  <li><b>Text Steganography</b></li>
+  <p align="justify">
+  <br>Text steganography is a mechanism of hiding secret text message inside another text as a covering message or generating a cover message related with the original 
+  secret message. There are three main categories used to hide text-in-text messages, that is, format based, random, and statistical generations and linguistic method.
+  </p>
+  <li><b>Video Steganography</b></li>
+  <p align="justify">
+  <br>Video steganography comprises two procedures which are the embedder and detector. The embedder has two data sources, which are payload implying the amount of secret 
+  message inserted inside a cover, and the cover video is utilized as a cover that contains the message inside it. Most methods of steganography implement the hiding 
+  operation on the cover without selecting better pixels. The correct selecting of pixels for hiding data achieves a high quality and robustness. Steganography has 
+  many techniques to hide the information. One of them is the least significant bit (LSB) method. The main disadvantages of this technique are the serial selection of 
+  pixels within the frame that is used for embedding the information inside it and the weakness against electronic attacks. For this reason, the knight tour algorithm 
+  was utilized for random selection of pixels and also a key function encryption method used to encrypt a secret message to increase the security and the robustness 
+  for the proposed method. After that, the stego video is made as an outcome of the embedding process and will be sent to the recipient. The detector represents the 
+  second procedure where the stego video represents the input to this procedure, and the detector can find the secret message by utilizing an extraction procedure.
+  </p>
+  <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-8.png"></img></center>
+  <p align="center"><br>Figure VIII. Video Steganography Flowchart</p>
+  <li><b>IP Datagram Steganography</b></li>
+  <p align="justify">
+  <br>This is another approach of steganography, which employs hiding data in the network datagram level in a TCP/IP based network like Internet. Network Covert 
+  Channel is the synonym of network steganography. Overall goal of this approach to make the stego datagram is undetectable by Network watchers like sniffer, Intrusion 
+  Detection System (IDS) etc. In this approach information to be hide is placed in the IP header of a TCP/IP datagram. Some of the fields of IP header and TCP header 
+  in an IPv4 network are chosen for data hiding.
+  </p>
+  <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-9.png"></img></center>
+  <p align="center"><br>Figure IX. IP Datagram Steganography</p>
 </ul>
   
 <a name="desc-9"></a>
@@ -222,9 +249,16 @@ Within these techniques, spatial and transform domain techniques are mostly used
 
 <a name="desc-10"></a>
 ## Conclusion
-
+<p align="justify">
+The proposed technique is a highly secure technique for embedding messages into images. Also, the symmetric key cryptographic algorithm used in this approach is very strong as it uses 8 bits key and a complex enciphering algorithm. It is almost computationally infeasible to retrieve the original message with a plain text attack. This technique also results in less distortion in an image after embedding. It has high PSNR (Peak Signal to Noise Ratio), less MSE (Minimum Squared Error), and it is imperceptible. This technique is also better than conventional LSB steganography. In this way, the system was strengthened using LSB approach to provide a means of secure communication.<br>
+The strength of Steganography lies in the sheer amount of information that changes hands every day. It is very simple using digital technology to conceal any given digital information within other information, so virtually anything could contain a hidden meaning. There is no practical way to check it all. However, none of steganography methods we examined could resist a concerted attack if someone knew that there was a message in a given document. For the greatest level of secrecy, a combination of both steganography and cryptography is necessary.
+</p>
+  
 <a name="desc-11"></a>
 ## Future Scope
+1. A strong cryptosystem can be built from the proposed method.
+2. A stronger cryptographic technique can be applied with the proposed steganographic technique in order to increase the security.
+3. Instead of single or double level; multilevel encryption can be applied with this technique to make the proposed method more secure.
 
 <a name="desc-12"></a>
 ## References
