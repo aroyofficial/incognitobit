@@ -111,6 +111,34 @@ Until modern times cryptography referred almost exclusively to encryption, which
 
 <a name="desc-6"></a>
 ## Types of Cryptography
+Modern Cryptography is of 3 types.<br>
+<center>
+<img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-1.png" style="display: block; margin-left: auto; margin-right: auto;"></img>
+</center>
+<p align="center">Figure I. Types of Cryptography</p>
+<p align="justify">
+<b>a) Symmetric / Public key cryptography</b> is a group of cryptographic algorithms where using the same key a message is encrypted on the sender side and decrypted on the receiver side. The encryption and decryption key are same; that is why this is known as public key cryptography. Again, this type of cryptography is divided into two different types. One is block cipher (plain text is divided into fixed or variable length of blocks and encryption is applied on each and every block) and another is stream cipher (a stream of keys is generated and then using them encryption is applied). This was the only kind of encryption publicly known until June 1976.Only agents with the secret key can encrypt or decrypt the data. Some popular symmetric key cryptographic algorithms are AES, DES, etc. An example is given in Figure II.
+</p>
+<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-2.png"></img></center>
+<p align="center">Figure II. Symmetric/Public key cryptography</p>
+<p align="justify">
+b) Asymmetric / Private key cryptography is a group of cryptographic algorithms where different keys are used for encryption and decryption process. This is also known as private key cryptography because encryption and decryption keys are not same; rather we can say they are private. A significant disadvantage of symmetric ciphers is the key management necessary to use them securely. Each distinct pair of communicating parties must, ideally, share a different key, and perhaps each cipher text exchanged as well. In a groundbreaking 1976 paper, Whitfield Diffie and Martin Hellman proposed the notion of public-key (also, more generally, called asymmetric key) cryptography in which two different but mathematically related keys are used—a public key and a private key. A public key system is so constructed that calculation of one key (the 'private key') is computationally infeasible from the other (the 'public key'), even though they are necessarily related. Instead, both keys are generated secretly, as an interrelated pair. Some popular asymmetric key cryptographic algorithms are RSA, Diffie-Hellman, etc. An example is given in Figure III.
+</p>
+<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-3.png"></img></center>
+<p align="center">Figure III. Asymmetric/Private key cryptography</p>
+<p align="justify">
+<b>c) Hashing</b> is a technique where a mathematical function is taken, generally known as hash function. By applying the hash function plain text is converted into cipher text. A cryptographic hash function is an algorithm that takes an arbitrary amount of data input—a credential—and produces a fixed-size output of enciphered text called a hash value, or just “hash.” That enciphered text can then be stored instead of the password itself, and later used to verify the user.<br>
+Certain properties of cryptographic hash functions impact the security of password storage.<br> 
+Non-reversibility, or one-way function. A good hash should make it very hard to reconstruct the original password from the output or hash.<br>
+Diffusion, or avalanche effect. A change in just one bit of the original password should result in change to half the bits of its hash. In other words, when a password is changed slightly, the output of enciphered text should change significantly and unpredictably.<br>
+Determinism. A given password must always generate the same hash value or enciphered text.<br>
+Collision resistance. It should be hard to find two different passwords that hash to the same enciphered text.<br>
+Non-predictable. The hash value should not be predictable from the password. Some popular hashing algorithms are SHA-256, MD5, etc.<br>
+A particular cryptographic algorithm from any of the above categories must assure some parameters in order to consider it as a strong algorithm. The parameters are key-length, confusion and diffusion, external factors for system design, etc.<br>
+<b>Cryptanalysis:</b> Cryptanalysis refers to the process of analyzing information systems in order to understand hidden aspects of the systems. Cryptanalysis is used to breach cryptographic security systems and gain access to the contents of encrypted messages, even if the cryptographic key is unknown.<br>
+In addition to mathematical analysis of cryptographic algorithms, cryptanalysis includes the study of side-channel attacks that do not target weaknesses in the cryptographic algorithms themselves, but instead exploit weaknesses in their implementation.<br>
+Even though the goal has been the same, the methods and techniques of cryptanalysis have changed drastically through the history of cryptography, adapting to increasing cryptographic complexity, ranging from the pen-and-paper methods of the past, through machines like the British Bombes and Colossus computers at Bletchley Park in World War II, to the mathematically advanced computerized schemes of the present. Methods for breaking modern cryptosystems often involve solving carefully constructed problems in pure mathematics, the best-known being integer factorization.<br>
+</p>
 
 <a name="desc-7"></a>
 ## Overview of Steganography
