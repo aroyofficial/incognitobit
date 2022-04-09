@@ -302,6 +302,34 @@ Suppose 240 is value of secret message and its equivalent 8 binary value is 1111
 <p align="justify">
 After embedding secret image in the cover image, it will become a stego image. The intended user follows the reverse steps to retrieve the secret data. The proposed 3-3-2 algorithm, for encoding and decoding are given in this section. Encoding technique and the decoding technique is given below.  
 </p>
+<ul>
+  <li><b>Algorithm of Encoding</b></li>
+  <p align="justify">
+    <br>1. Input cover image file.<br>
+    2. Read required secret image file to be hidden.<br>
+    3. Read a stego key (generated randomnly between 1 and width of the cover image) and generate initial encoding pixel.<br>
+    4. Reserve last row of image for sending the stego key, private key, and the length of the message.<br>
+    5. Embed the message bit from the initial encoding pixel.<br>
+    6. Take 4 LSB bits of each red, green, blue pixels of the cover image.<br>
+    7. Compute the position for inserting the secret data into cover image in a cyclic order.<br>
+    8. Embed the eight bits of the secret image into 4 bits of LSB of RGB pixels of the cover image in the order of 3,3,2 respectively using the position obtained from 
+    step 7.<br>
+    9. Repeat steps 6 to 8 until all pixels of secret image are embedded in cover image.<br>
+  </p>
+  <li><b>Algorithm of Decoding</b></li>
+  <p align="justify">
+    <br>1. Input stego image file.<br>
+    2. Extract the stego key, private key and length of the message from the image.<br>
+    3. Store the number of message bits in the variable remaining.<br>
+    4. Find the initial encoding pixel from the stego key.<br>
+    5. Retrieval will be started from the initial encoding pixel.<br>
+    6. Take 4 LSB bits of each red, green, blue pixels of the stego image.<br>
+    7. Obtain the position of embedded bits of the secret data in a cyclic order.<br>
+    8. Retrieve the bits using these positions in the order of 3,3,2 respectively, using the position btained from step 7.<br>
+    9. if authentication token matched then reconstruct the secret information otherwise print that image does not contain any message.<br>
+    10. Repeat steps 3 to 5 until all pixels of secret image embedded are retrieved.<br>
+  </p>
+</ul>
   
 <a name="desc-10"></a>
 ## Conclusion
