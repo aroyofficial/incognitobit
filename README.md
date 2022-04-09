@@ -434,3 +434,7 @@ The strength of Steganography lies in the sheer amount of information that chang
 <a name="p-9"></a>
 [9] G.R.Manjula and Ajit Danti; A Novel Hash Based Least Significant Bit (2-3-3) Image Steganography in Spatial Domain. International Journal of Security, Privacy and Trust Management (IJSPTM) Vol 4, No 1, February 2015.
 </p>
+
+# License
+
+<b><a href="https://github.com/aroyofficial/incognitobit/blob/main/LICENSE.md">Click here</a></b> to see the license.
