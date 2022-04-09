@@ -59,7 +59,22 @@ This project comprehends the following objectives –<br>
 
 <a name="desc-2"></a>
 ## Literature Review
-
+<p align="justify">
+In [1] Shilpa Gupta, Geeta Gujral, and Neha Aggarwal proposed an enhanced approach of LSB steganography where distortion will be almost negligible. Authors are suggested to use 24 bitmap images to hide the secret message. The secret message is to be hidden only in the blue channel. Firstly, all the pixels within the cover image are filtered with a pixel selection filter and then the pixel with less distortion is selected and the LSB of the blue channel of that pixel is replaced by
+message bits. The proposed method results in a high PSNR value compared to conventional LSB method.<br>
+In [2] a new approach for LSB based image steganography using secret key is introduced by S. M. Masud Karim, Md. Saifur Rahman, and Md. Ismail Hossain. In this technique message bits are hidden in LSB of green and blue channel. One by one pixels are selected and XOR operation is performed between LSB of red channel and the first bit of secret message. If result is 0 then LSB of green channel is replaced by the message bit. Otherwise, LSB of blue channel is replaced by the message bit. Then again next bit of secret message and the LSB of red channel of the next pixel is selected and this process continues until the whole message is going to be hidden inside cover image. This method has also a high PSNR value.<br>
+In [3] Mamta Juneja, and Parvinder S. Sandhu proposed a new method of hiding message into an image using LSB steganography. Firstly, message is converted into cipher using S-DES algorithm. Now, smooth edges of the cover image are detected by a custom filter composed of Canny filter and Hough transform. Then using a Pseudo Random Number Generator, pixels are selected randomly from the detected smooth edges. Finally, 1 LSB of red channel, 3 LSB of green channel, and 4 LSB of blue channel of the randomly selected pixel is replaced by the bits of the cipher message. This method has a high PSNR value because only smooth edges are slightly changed <br>
+In [4] Marwa M. Emam, Abdelmgeid A. Aly, and Fatma A. Omara introduced a new approach on LSB steganography with random pixel selection. In this approach pixels are selected randomly using a Pseudo Random Number Generator. Channels are selected in a repeated manner of blue-3 green and blue channel. In blue channel 2 LSBs, and in green channel only 1 LSB is replaced by the message bit.<br>
+In [5] Hamid M. Farhan, and Zena Ahmed Alwan proposed a method of doing LSB steganography by using 2 Exclusive-OR operation. First XOR is performed between LSB of red
+channel and the first message bit. Then second XOR is performed between result of the first XOR and LSB of green channel. Finally, the LSB of the blue channel is replaced by the result of second XOR. This process continue until the entire message is going to be hidden. This method has a high PSNR as of only ± 1 change in the blue channel of every pixel.<br>
+In [6] Lip Yee Por, Delina Beh, Tang Fong Ang., and Sim Ying Ong proposed a method of steganography by combining stego one, two, three, four-bit LSBs and stego color cycle algorithm. By using color cycle algorithm, pixels are selected sequentially and 1-, 2-, 3-, and 4-bit LSB steganography is applied on each and every channel. The proposed method uses LSB substitution very effectively so that the relative change between RGB channel of stego image is minimal and it uses more secured multi-layered embedding effectively.<br>
+In [7] a new method in image steganography with improved image quality is proposed by Atallah M. Al-Shatnawi, where secret messages are hidden within the randomly selected pixels. At first red channel is selected and then two message bits are taken. Then two least significant bits of red channel is taken and it is checked whether they are identical with the message bits or not. If identical then there is no need to hide that two message bits. If not identical then we take next
+two least significant bits of red channel and again they are checked with the message bits. If the message bits are not identical with any of the two contiguous bits of red channel, then the message bits are replaced with two least significant bits of red channel. Then again next two message bits are selected and this same process is applied on green and blue channel. Also, the hiding locations are saved in a binary table. This whole process is continued until the whole message is going to be hidden inside the cover image. This method has high PSNR value.<br>
+In [8] a new encrypted method of image steganography by Sabyasachi Pramanik, Dr. R. P. Singh, Ramkrishna Ghosh where secret messages can be hidden by using the CAPTCHA codes within 4 a cover image using image steganography. Here the CAPTCHA image is embedded into a 24-bit color image using the LSB of Red, Green and Blue pixels of the 24-bit color image. For each and every character in the captcha a flag bit is set (flag bit is either 0 or 1 depending upon 0 to 1 which have lesser number of occurrences in 7-bit binary ASCII). Now this flag bit is concatenated with the 2-bit binary representation of number of occurrences of flag bit within the ASCII. Finally, this 3-bit binary is converted into decimal and it is concatenated with the positions of flag bit (calculated from left to right started with 1). Now, this final decimal string becomes particular code for that character. Similarly, code is calculated for other characters in the CAPTCHA. Now these codes are converted into binary and they are hidden according to conventional LSB.<br>
+In [9], This paper presents a novel 2-3-3 LSB insertion method. The image steganography takes the advantage of human eye limitation. It uses color image as cover media for embedding secret message. The important quality of a steganographic system is to be less distortive while increasing the size of the secret message. In this paper a method is proposed to embed a color secret image into a color cover image. A 2-3-3 LSB insertion method has been used for image steganography. Experimental results show an improvement in the Mean squared error (MSE) and Peak Signal to Noise Ratio (PSNR) values of the proposed technique over the base technique of
+hash based 3-3-2 LSB insertion.
+</p>
+  
 <a name="desc-3"></a>
 ## System Requirements
 
@@ -90,14 +105,23 @@ This project comprehends the following objectives –<br>
 <a name="desc-12"></a>
 ## References
 <p align="justify">
+<a name="p-1"></a>
 [1] Shilpa Gupta, Geeta Gujral, and Neha Aggarwal, “Enhanced least significant bit algorithm for image steganography,” International Journal of Computational Engineering & Management, vol. 15, issue 4, July 2012.<br>
+<a name="p-2"></a>
 [2] S. M. Masud Karim, Md. Saifur Rahman, Md. Ismail Hossain, “A new approach for lsb based image steganography using secret key,” Proceedings of 14th International Conference on Computer and Information Technology (ICCIT 2011), 22-24 December, 2011, Dhaka, Bangladesh.<br>
+<a name="p-3"></a>
 [3] Mamta Juneja, and Parvinder S. Sandhu, “An improved lsb based steganography technique for rgb color Images,” International Journal of Computer and Communication Engineering, vol. 2, no. 4, July 2013.<br>
+<a name="p-4"></a>
 [4] Marwa M. Emam, Abdelmgeid A. Aly, Fatma A. Omara, “An improved image steganography method based on lsb technique with random pixel selection,” International Journal of Advanced Computer Science and Applications, vol. 7, no. 3, 2016.<br>
+<a name="p-5"></a>
 [5] Hamid Mohammed Farhan, and Zena Ahmed Alwan, “Improved method using a two exclusive-or to binary image in rgb color image steganography,” International Journal of Engineering and Technology, vol. 7, no. 4, pp. 4295–4299, 2018.<br>
+<a name="p-6"></a>
 [6] Lip Yee Por, Delina Beh, Tan Fong Ang, and Sim Ying Ong, “An enhanced mechanism for image steganography using sequential colour cycle algorithm,” The International Arab Journal of Information Technology, vol. 10, no. 1, January 2013.<br>
+<a name="p-7"></a>
 [7] Atallah M. Al-Shatnawi, “A new method in image steganography with improved image quality,” Applied Mathemetical Sciences, vol. 6, no. 79, pp. 3907–3915, 2012.<br>
+<a name="p-8"></a>
 [8] Sabyasachi Pramanik, Dr. R. P. Singh, and Ramkrishna Ghosh, “A new encrypted method in image steganography,” Indonesian Journal of Electrical Engineering and Computer Science, vol. 14, no. 3, pp. 1412– 1419, June 2019<br>
+<a name="p-9"></a>
 [9] G.R.Manjula and Ajit Danti; A Novel Hash Based Least Significant Bit (2-3-3) Image Steganography in Spatial Domain. International Journal of Security, Privacy and Trust Management (IJSPTM) Vol 4, No 1, February 2015.
 </p>
   
