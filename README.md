@@ -118,7 +118,7 @@ hash based 3-3-2 LSB insertion.
 <a name="p-7"></a>
 [7] Atallah M. Al-Shatnawi, “A new method in image steganography with improved image quality,” Applied Mathemetical Sciences, vol. 6, no. 79, pp. 3907–3915, 2012.<br>
 <a name="p-8"></a>
-[8] Sabyasachi Pramanik, Dr. R. P. Singh, and Ramkrishna Ghosh, “A new encrypted method in image steganography,” Indonesian Journal of Electrical Engineering and Computer Science, vol. 14, no. 3, pp. 1412– 1419, June 2019<br>
+[8] Sabyasachi Pramanik, Dr. R. P. Singh, and Ramkrishna Ghosh, “A new encrypted method in image steganography,” Indonesian Journal of Electrical Engineering and Computer Science, vol. 14, no. 3, pp. 1412– 1419, June 2019.<br>
 <a name="p-9"></a>
 [9] G.R.Manjula and Ajit Danti; A Novel Hash Based Least Significant Bit (2-3-3) Image Steganography in Spatial Domain. International Journal of Security, Privacy and Trust Management (IJSPTM) Vol 4, No 1, February 2015.
 </p>
