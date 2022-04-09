@@ -28,9 +28,42 @@ After performing Step 1, run main.py file with the latest Python compiler (Pytho
 
 # How to use
 
-<img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/encryption.gif"></img>
+<ul>
+  <li><b>How to hide a message inside a cover image</b></li>
+  <br>
+  <p align="justify">
+  1. Run <b>main.py</b> file.<br>
+  2. Go to <b>Encryption</b> tab.<br>
+  3. Click on the <b>Upload Image</b> button and upload an image (must have .png extension).<br>
+  4. Write some message in the input box or can upload a text file by clicking <b>Upload Text</b> button.<br>
+  5. Now click on <b>Generate Stego Image</b> button.<br>
+  6. Wait some time and then can see the stego image (which contains your message) in the <b>right sub-window</b>.<br>
+  7. Now can save the stego image by clicking on <b>Save Stego Image</b> button.<br>
+  </p>
+  
+  <img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/encryption.gif"></img>
+  <p align="center">(Guide) How to hide a message inside an image using IncognitoBit</p>
 
-<img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/decryption.gif"></img>
+  <li><b>How to retrieve message from an image</b></li>
+  <br>
+  <p align="justify">
+    1. Run <b>main.py</b> file.<br>
+    2. Go to <b>Decryption</b> tab.<br>
+    3. Click on the <b>Upload Image</b> button and upload an image (must have .png extension) from which you want to retrieve the message.<br>
+    4. Now click on <b>Retrieve Message</b> button.<br>
+    5. Wait some time and then result appears on the screen. If that image contains any message then it will be shown in the <b>right sub-window</b>; otherwise it will 
+    show <b>No hidden message found</b>.<br>
+    6. If message retrieved successfully; then it can be saved into a text file by clicking on <b>Save Message</b> button.<br>
+  </p>
+  
+  <img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/decryption.gif"></img>
+  <p align="center">(Guide) How to retrieve message from an image using IncognitoBit</p>
+  
+  <li><b>Other functionalities</b></li>
+  <br>
+  <b>Reset</b> - To reset the application.<br>
+  <b>Exit</b> - To close the application.
+</ul>
 
 <a name="documentation"></a>
 # Acknowledgement
