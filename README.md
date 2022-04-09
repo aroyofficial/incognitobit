@@ -2,8 +2,32 @@
 
 This project comes with a **_GUI_** using which users can hide any message within an image and also they can retrieve the message from a stego image (which contains a message). This project **_implements a secure steganographic algorithm_** which is described in this document.
 
-# Project Description
+<a href="#documentation"><b>Click Here to see the documentation</b></a>
 
+# How to install and run
+
+<pre>
+<a href="https://github.com/aroyofficial/incognitobit/archive/refs/heads/main.zip">Click here</a> to install the zip and unzip it in the local machine.
+</pre>
+
+Also can clone this repository in the local machine by copying and pasting the anyone of the link given below in git bash
+```
+git clone https://github.com/aroyofficial/incognitobit.git
+```
+```
+git@github.com:aroyofficial/incognitobit.git
+```
+```
+gh repo clone aroyofficial/incognitobit
+```
+
+# How to use
+
+<img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/encryption.gif"></img>
+
+<img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/decryption.gif"></img>
+
+<a name="documentation"></a>
 # Acknowledgement
 
 <p align=justify>
