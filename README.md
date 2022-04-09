@@ -249,9 +249,16 @@ Within these techniques, spatial and transform domain techniques are mostly used
 
 <a name="desc-10"></a>
 ## Conclusion
-
+<p align="justify">
+The proposed technique is a highly secure technique for embedding messages into images. Also, the symmetric key cryptographic algorithm used in this approach is very strong as it uses 8 bits key and a complex enciphering algorithm. It is almost computationally infeasible to retrieve the original message with a plain text attack. This technique also results in less distortion in an image after embedding. It has high PSNR (Peak Signal to Noise Ratio), less MSE (Minimum Squared Error), and it is imperceptible. This technique is also better than conventional LSB steganography. In this way, the system was strengthened using LSB approach to provide a means of secure communication.<br>
+The strength of Steganography lies in the sheer amount of information that changes hands every day. It is very simple using digital technology to conceal any given digital information within other information, so virtually anything could contain a hidden meaning. There is no practical way to check it all. However, none of steganography methods we examined could resist a concerted attack if someone knew that there was a message in a given document. For the greatest level of secrecy, a combination of both steganography and cryptography is necessary.
+</p>
+  
 <a name="desc-11"></a>
 ## Future Scope
+1. A strong cryptosystem can be built from the proposed method.
+2. A stronger cryptographic technique can be applied with the proposed steganographic technique in order to increase the security.
+3. Instead of single or double level; multilevel encryption can be applied with this technique to make the proposed method more secure.
 
 <a name="desc-12"></a>
 ## References
