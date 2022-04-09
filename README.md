@@ -265,7 +265,7 @@ In this proposed system Cryptography and Steganography are merged together. The 
   6. If K not found from the previous steps, then repeat the same process from step 1 to step 5.<br>
   </p>
   <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-11.png"></img></center>
-  <p align="center">Figure XI. Private Key generation flowchart</p>
+  <p align="center"><br>Figure XI. Private Key generation flowchart</p>
   <li>
     <b>Symmetric Key Cryptography Algorithm</b>
   </li>
@@ -273,10 +273,35 @@ In this proposed system Cryptography and Steganography are merged together. The 
   <li>
     <b>Encryption Algorithm</b>
   </li>
+  <p align="justify">
+    1. Generate the ASCII value of all the letters.<br>
+    2. Divide all the values with K.<br>
+    3. Store the quotient as 4 MSB bits and remainder as 4 LSB bits. Represent both quotient and remainder in 4-bit binary representation.<br>
+    4. Reverse all the 8-bit binary number(s).<br>
+    5. Now the resultant binary set of numbers after the above operations is the secret encrypted cipher text, ready to use for second step.<br>
+  </p>
+  <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-12.png"></img></center>
+  <p align="center"><br>Figure XII. Encryption flowchart</p>
   <li>
     <b>Decryption Algorithm</b>
   </li>
+  <p align="justify">
+    1. Reverse all the 8-bit numbers of H.
+    2. Multiply 4 MSB bits of all the cipher text by the Key K.<br>
+    3. Add 4 LSB bits of the cipher text with the result produced in the previous step.<br>
+    4. If the result produced in the previous step is not an 8-bit number we need to make it an 8-bit number by adding 0s (Zeros) in left hand side.<br>
+    5. All the numbers in 8 bits become the original text i.e. The Plain Text or Secret Data.<br>
+  </p>
 </ul>
+<p align="justify">
+A hash based least significant bit technique is proposed in this paper. A color image is considered as a cover media and secret data is embedded in this cover media as payload. The proposed technique takes eight bits of secret data at a time and put them in LSB of RGB (Red, Green and Blue) pixel value of the cover image in 3-3-2 order respectively. Such that 3 pixels are embedded in red channel, 3 pixels are embedded in green channel, and 2 pixels are embedded in blue channel.<br>
+Suppose 240 is value of secret message and its equivalent 8 binary value is 11110101; then it is distributed in the order of 3-3-2 to be embedded in LSB of RGB pixels respectively. Suppose m represents the bit position within the pixel. Value of m=1,2,3 for red, m=4,1,2 for green, and m=3,4 for blue. So, after embedding the secret data in the particular pixel of cover image, The RGB pixel value of the stego image as below – Red (00100111), Green (11101010), Blue (11001000) The embedding positions of the eight bits out of the four (4) available bits of LSB is obtained in a cyclic order which increases the security of the technique compared to other LSB based techniques.<br>
+</p>
+<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-13.png"></img></center>
+<p align="center"><br>Figure XIII. 3-3-2 LSB Technique</p>
+<p align="justify">
+After embedding secret image in the cover image, it will become a stego image. The intended user follows the reverse steps to retrieve the secret data. The proposed 3-3-2 algorithm, for encoding and decoding are given in this section. Encoding technique and the decoding technique is given below.  
+</p>
   
 <a name="desc-10"></a>
 ## Conclusion
