@@ -6,6 +6,7 @@ This project comes with a **_GUI_** using which users can hide any message withi
 
 # How to install and run
 
+> <b>Step 1</b>
 <pre>
 <a href="https://github.com/aroyofficial/incognitobit/archive/refs/heads/main.zip">Click here</a> to install the zip and unzip it in the local machine.
 </pre>
@@ -20,6 +21,10 @@ git@github.com:aroyofficial/incognitobit.git
 ```
 gh repo clone aroyofficial/incognitobit
 ```
+
+> <b>Step 2</b>
+
+After performing Step 1, run main.py file with the latest Python compiler (Python 3 or above)
 
 # How to use
 
