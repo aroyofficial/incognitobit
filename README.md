@@ -1,3 +1,9 @@
+# Project IncognitoBit
+
+This project comes with a **_GUI_** using which users can hide any message within an image and also they can retrieve the message from a stego image (which contains a message). This project **_implements a secure steganographic algorithm_** which is described in this document.
+
+# Project Description
+
 # Acknowledgement
 
 <p align=justify>
@@ -265,7 +271,7 @@ In this proposed system Cryptography and Steganography are merged together. The 
   6. If K not found from the previous steps, then repeat the same process from step 1 to step 5.<br>
   </p>
   <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-11.png"></img></center>
-  <p align="center">Figure XI. Private Key generation flowchart</p>
+  <p align="center"><br>Figure XI. Private Key generation flowchart</p>
   <li>
     <b>Symmetric Key Cryptography Algorithm</b>
   </li>
@@ -273,9 +279,62 @@ In this proposed system Cryptography and Steganography are merged together. The 
   <li>
     <b>Encryption Algorithm</b>
   </li>
+  <p align="justify">
+    1. Generate the ASCII value of all the letters.<br>
+    2. Divide all the values with K.<br>
+    3. Store the quotient as 4 MSB bits and remainder as 4 LSB bits. Represent both quotient and remainder in 4-bit binary representation.<br>
+    4. Reverse all the 8-bit binary number(s).<br>
+    5. Now the resultant binary set of numbers after the above operations is the secret encrypted cipher text, ready to use for second step.<br>
+  </p>
+  <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-12.png"></img></center>
+  <p align="center"><br>Figure XII. Encryption flowchart</p>
   <li>
     <b>Decryption Algorithm</b>
   </li>
+  <p align="justify">
+    1. Reverse all the 8-bit numbers of H.
+    2. Multiply 4 MSB bits of all the cipher text by the Key K.<br>
+    3. Add 4 LSB bits of the cipher text with the result produced in the previous step.<br>
+    4. If the result produced in the previous step is not an 8-bit number we need to make it an 8-bit number by adding 0s (Zeros) in left hand side.<br>
+    5. All the numbers in 8 bits become the original text i.e. The Plain Text or Secret Data.<br>
+  </p>
+</ul>
+<p align="justify">
+A hash based least significant bit technique is proposed in this paper. A color image is considered as a cover media and secret data is embedded in this cover media as payload. The proposed technique takes eight bits of secret data at a time and put them in LSB of RGB (Red, Green and Blue) pixel value of the cover image in 3-3-2 order respectively. Such that 3 pixels are embedded in red channel, 3 pixels are embedded in green channel, and 2 pixels are embedded in blue channel.<br>
+Suppose 240 is value of secret message and its equivalent 8 binary value is 11110101; then it is distributed in the order of 3-3-2 to be embedded in LSB of RGB pixels respectively. Suppose m represents the bit position within the pixel. Value of m=1,2,3 for red, m=4,1,2 for green, and m=3,4 for blue. So, after embedding the secret data in the particular pixel of cover image, The RGB pixel value of the stego image as below – Red (00100111), Green (11101010), Blue (11001000) The embedding positions of the eight bits out of the four (4) available bits of LSB is obtained in a cyclic order which increases the security of the technique compared to other LSB based techniques.<br>
+</p>
+<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-13.png"></img></center>
+<p align="center"><br>Figure XIII. 3-3-2 LSB Technique</p>
+<p align="justify">
+After embedding secret image in the cover image, it will become a stego image. The intended user follows the reverse steps to retrieve the secret data. The proposed 3-3-2 algorithm, for encoding and decoding are given in this section. Encoding technique and the decoding technique is given below.  
+</p>
+<ul>
+  <li><b>Algorithm of Encoding</b></li>
+  <p align="justify">
+    <br>1. Input cover image file.<br>
+    2. Read required secret image file to be hidden.<br>
+    3. Read a stego key (generated randomnly between 1 and width of the cover image) and generate initial encoding pixel.<br>
+    4. Reserve last row of image for sending the stego key, private key, and the length of the message.<br>
+    5. Embed the message bit from the initial encoding pixel.<br>
+    6. Take 4 LSB bits of each red, green, blue pixels of the cover image.<br>
+    7. Compute the position for inserting the secret data into cover image in a cyclic order.<br>
+    8. Embed the eight bits of the secret image into 4 bits of LSB of RGB pixels of the cover image in the order of 3,3,2 respectively using the position obtained from 
+    step 7.<br>
+    9. Repeat steps 6 to 8 until all pixels of secret image are embedded in cover image.<br>
+  </p>
+  <li><b>Algorithm of Decoding</b></li>
+  <p align="justify">
+    <br>1. Input stego image file.<br>
+    2. Extract the stego key, private key and length of the message from the image.<br>
+    3. Store the number of message bits in the variable remaining.<br>
+    4. Find the initial encoding pixel from the stego key.<br>
+    5. Retrieval will be started from the initial encoding pixel.<br>
+    6. Take 4 LSB bits of each red, green, blue pixels of the stego image.<br>
+    7. Obtain the position of embedded bits of the secret data in a cyclic order.<br>
+    8. Retrieve the bits using these positions in the order of 3,3,2 respectively, using the position btained from step 7.<br>
+    9. If authentication token matched then reconstruct the secret information from algorithm of decryption otherwise print that image does not contain any message.<br>
+    10. Repeat steps 3 to 5 until all pixels of secret image embedded are retrieved.<br>
+  </p>
 </ul>
   
 <a name="desc-10"></a>
@@ -313,10 +372,3 @@ The strength of Steganography lies in the sheer amount of information that chang
 <a name="p-9"></a>
 [9] G.R.Manjula and Ajit Danti; A Novel Hash Based Least Significant Bit (2-3-3) Image Steganography in Spatial Domain. International Journal of Security, Privacy and Trust Management (IJSPTM) Vol 4, No 1, February 2015.
 </p>
-  
-# Project IncognitoBit
-
-This project comes with a **_GUI_** using which users can hide any message within an image and also they can retrieve the message from a stego image (which contains a message). This project **_implements a secure steganographic algorithm_** which is described in this document.
-
-# Project Description
-
