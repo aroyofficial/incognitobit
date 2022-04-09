@@ -197,6 +197,24 @@ Within these techniques, spatial and transform domain techniques are mostly used
   steganographic algorithms must assure some parameters like PSNR (Peak Signal to Noise Ration), MSE (Mean Squared Error), imperceptibility, bit error rate, 
   robustness, etc. to make sure that it is a secure algorithm. 
   </p>
+  <li><b>Audio Steganography</b></li>
+  <p align="justify">
+  <br>In audio steganography, secret message is embedded into digitized audio signal which result slight altering of binary sequence of the corresponding audio file. There 
+  are several methods are available for audio steganography. Some of them are as follows -<br>
+  <b>a) Phase coding</b> is a scheme where the phase of carrier file is replaced with reference phase which represents hidden data. In parity coding signals are 
+  divided into regions, then parity bit of each region calculated and matched with secret message bit. Depending on parity matching result encoding is done.<br>
+  <b>b) Spread spectrum</b> technique spreads hidden data through the frequency spectrum. Spread spectrum (SS) is a concept developed in data communications to ensure 
+  a proper recovery of a signal sent over a noisy channel by producing redundant copies of the data signal. Basically, data are multiplied by an M-sequence code known 
+  to both sender and receiver, then hidden in the cover audio. Thus, if noise corrupts some values, there will still be copies of each value left to recover the hidden 
+  message. In conventional direct sequence spread spectrum (DSSS) technique was applied to hide confidential information in MP3 and WAV signals. Spread spectrum is
+  combined to phase shifting in order to increase the robustness of transmitted data against additive noise and to allow easy detection of the hidden data.   
+  Appropriately chosen sub-band coefficients were selected to address robustness and resolve synchronization uncertainty at the decoder.<br>
+  <b>c) Tone coding</b> focuses on the frequency masking in audio by using tone insertion method. Inserting tones at known frequencies and at low power level (depends 
+  on the original audio power) then modulate the secret massage into this inserted tone. The hidden information is imperceptible so a listener is unable to distinguish 
+  between the cover- and the stego-audio signal. So, the cover is audio and the hidden data (secret massage) is the English language text document. The proposed method 
+  focuses on the payload of the host audio with no disruption of robustness and imperceptible. The payload has been increased using new algorithm relay on new stego-
+  table and using frequent pattern detection into ANSI code. Also, there are other techniques like Wavelet coefficient, low bit encoding, echo coding, etc.
+  </p>
 </ul>
   
 <a name="desc-9"></a>
