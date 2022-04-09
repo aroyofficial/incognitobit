@@ -147,6 +147,9 @@ The word ‘steganography’ originated from the Greek word ‘steganographia’
 </p>
 <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-4.png"></img></center>
 <p align="center">Figure IV. Stego System</p>
+<p align="justify">
+Information is added by the sender and if the receiver wants to get the original image, then he needs to extract the embedded image with the help of the secret information provided by the sender. When the receiver will receive the file will be in the embedded form and by extracting it he or she can use or read the original object file which is sent by the sender. This embedding of the binary code is different for the different types of the files.
+</p>
 
 <a name="desc-8"></a>
 ## Types of Steganography
