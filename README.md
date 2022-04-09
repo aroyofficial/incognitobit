@@ -162,7 +162,11 @@ In modern steganography, especially digital steganography becomes popular and st
 <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-6.png"></img></center>
 <p align="center">Figure VI. Steganography Techniques</p>
 <p align="justify">
-  
+Within these techniques, spatial and transform domain techniques are mostly used.<br>
+<ul>
+  <li>   Image Steganography</li>
+  <b>a) LSB</b> stands for Least Significant Bit steganography. In this technique, least significant bits are replaced with the message bits so that the minimum distortion will be resulted in the cover medium and which is imperceptible to the human eye. In Figure III an example is given
+</ul>
 </p>
   
 <a name="desc-9"></a>
