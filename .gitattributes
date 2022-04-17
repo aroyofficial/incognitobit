@@ -1,1 +1,2 @@
 IncognitoBit[[:space:]]Setup.exe filter=lfs diff=lfs merge=lfs -text
+IncognitoBit.exe filter=lfs diff=lfs merge=lfs -text
