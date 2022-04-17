@@ -42,7 +42,7 @@ After performing Step 1, run main.py file with the latest Python compiler (Pytho
   7. Now can save the stego image by clicking on <b>Save Stego Image</b> button.<br>
   </p>
   
-  <img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/encryption.gif"></img>
+  <img src="https://github.com/aroyofficial/incognitobit/blob/main/images/encryption.gif"></img>
   <p align="center">(Guide) How to hide a message inside an image using IncognitoBit</p>
 
   <li><b>How to retrieve message from an image</b></li>
@@ -57,7 +57,7 @@ After performing Step 1, run main.py file with the latest Python compiler (Pytho
     6. If message retrieved successfully; then it can be saved into a text file by clicking on <b>Save Message</b> button.<br>
   </p>
   
-  <img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/decryption.gif"></img>
+  <img src="https://github.com/aroyofficial/incognitobit/blob/main/images/decryption.gif"></img>
   <p align="center">(Guide) How to retrieve message from an image using IncognitoBit</p>
   
   <li><b>Other functionalities</b></li>
@@ -182,18 +182,18 @@ Until modern times cryptography referred almost exclusively to encryption, which
 ## Types of Cryptography
 Modern Cryptography is of 3 types.<br>
 <center>
-<img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-1.png" style="display: block; margin-left: auto; margin-right: auto;"></img>
+<img src="https://github.com/aroyofficial/incognitobit/blob/main/images/fig-1.png" style="display: block; margin-left: auto; margin-right: auto;"></img>
 </center>
 <p align="center">Figure I. Types of Cryptography</p>
 <p align="justify">
 <b>a) Symmetric / Public key cryptography</b> is a group of cryptographic algorithms where using the same key a message is encrypted on the sender side and decrypted on the receiver side. The encryption and decryption key are same; that is why this is known as public key cryptography. Again, this type of cryptography is divided into two different types. One is block cipher (plain text is divided into fixed or variable length of blocks and encryption is applied on each and every block) and another is stream cipher (a stream of keys is generated and then using them encryption is applied). This was the only kind of encryption publicly known until June 1976.Only agents with the secret key can encrypt or decrypt the data. Some popular symmetric key cryptographic algorithms are AES, DES, etc. An example is given in Figure II.
 </p>
-<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-2.png"></img></center>
+<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/fig-2.png"></img></center>
 <p align="center">Figure II. Symmetric/Public key cryptography</p>
 <p align="justify">
 b) Asymmetric / Private key cryptography is a group of cryptographic algorithms where different keys are used for encryption and decryption process. This is also known as private key cryptography because encryption and decryption keys are not same; rather we can say they are private. A significant disadvantage of symmetric ciphers is the key management necessary to use them securely. Each distinct pair of communicating parties must, ideally, share a different key, and perhaps each cipher text exchanged as well. In a groundbreaking 1976 paper, Whitfield Diffie and Martin Hellman proposed the notion of public-key (also, more generally, called asymmetric key) cryptography in which two different but mathematically related keys are used—a public key and a private key. A public key system is so constructed that calculation of one key (the 'private key') is computationally infeasible from the other (the 'public key'), even though they are necessarily related. Instead, both keys are generated secretly, as an interrelated pair. Some popular asymmetric key cryptographic algorithms are RSA, Diffie-Hellman, etc. An example is given in Figure III.
 </p>
-<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-3.png"></img></center>
+<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/fig-3.png"></img></center>
 <p align="center">Figure III. Asymmetric/Private key cryptography</p>
 <p align="justify">
 <b>c) Hashing</b> is a technique where a mathematical function is taken, generally known as hash function. By applying the hash function plain text is converted into cipher text. A cryptographic hash function is an algorithm that takes an arbitrary amount of data input—a credential—and produces a fixed-size output of enciphered text called a hash value, or just “hash.” That enciphered text can then be stored instead of the password itself, and later used to verify the user.<br>
@@ -214,7 +214,7 @@ Even though the goal has been the same, the methods and techniques of cryptanaly
 <p align="justify">
 The word ‘steganography’ originated from the Greek word ‘steganographia’. This word was first ever founded in the year 1499 in the book of a Greek author named Johannes Trithemius. This word is basically a combination of two separate words. ‘steganos’ means hiding or hiding within something and ‘graphia’ means writing. So, steganography is the practice of hiding messages inside any medium, etc. The particular medium such as text, image, audio, video within which the message is to be hidden is known as cover medium. To provide an extra layer of security, the original message is also changed into some secret message and then it is hidden inside the cover medium. Steganography based communication over easily accessible platforms to prevent leakage of information. Here, embedding of information in a cover image is shown below:
 </p>
-<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-4.png"></img></center>
+<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/fig-4.png"></img></center>
 <p align="center">Figure IV. Stego System</p>
 <p align="justify">
 Information is added by the sender and if the receiver wants to get the original image, then he needs to extract the embedded image with the help of the secret information provided by the sender. When the receiver will receive the file will be in the embedded form and by extracting it he or she can use or read the original object file which is sent by the sender. This embedding of the binary code is different for the different types of the files.
@@ -223,12 +223,12 @@ Information is added by the sender and if the receiver wants to get the original
 <a name="desc-8"></a>
 ## Types of Steganography
 Based on the cover medium there are different types of steganography which are given below in the Figure V.
-<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-5.png"></img></center>
+<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/fig-5.png"></img></center>
 <p align="center">Figure V. Types of Steganography</p>
 <p align="justify">
 In modern steganography, especially digital steganography becomes popular and stand apart from others. In digital steganography, different multimedia files are used to hide the message. Due to the large media file size; it is also hard to find the message within the cover medium. There are several techniques of doing the digital steganography. They are given below in the Figure VI.
 </p>
-<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-6.png"></img></center>
+<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/fig-6.png"></img></center>
 <p align="center">Figure VI. Steganography Techniques</p>
 <p align="justify">
 Within these techniques, spatial and transform domain techniques are mostly used.<br>
@@ -238,7 +238,7 @@ Within these techniques, spatial and transform domain techniques are mostly used
   <p align="justify">
   <br><b>a) LSB</b> stands for Least Significant Bit steganography. In this technique, least significant bits are replaced with the message bits so that the minimum  distortion will be resulted in the cover medium and which is imperceptible to the human eye. In Figure VII an example is given.
   </p>
-  <center>&emsp;&emsp;&emsp;&emsp;<img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-7.png"></img></center>
+  <center>&emsp;&emsp;&emsp;&emsp;<img src="https://github.com/aroyofficial/incognitobit/blob/main/images/fig-7.png"></img></center>
   <p align="center"><br>Figure VII. LSB Steganography on Lena Image</p>
   <p align="justify">
   <b>b) PVD</b> stands for Pixel Value Differencing. Two pixels are chosen from the cover medium and it is checked that whether they are belonging to the smooth area 
@@ -300,7 +300,7 @@ Within these techniques, spatial and transform domain techniques are mostly used
   for the proposed method. After that, the stego video is made as an outcome of the embedding process and will be sent to the recipient. The detector represents the 
   second procedure where the stego video represents the input to this procedure, and the detector can find the secret message by utilizing an extraction procedure.
   </p>
-  <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-8.png"></img></center>
+  <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/fig-8.png"></img></center>
   <p align="center"><br>Figure VIII. Video Steganography Flowchart</p>
   <li><b>IP Datagram Steganography</b></li>
   <p align="justify">
@@ -309,7 +309,7 @@ Within these techniques, spatial and transform domain techniques are mostly used
   Detection System (IDS) etc. In this approach information to be hide is placed in the IP header of a TCP/IP datagram. Some of the fields of IP header and TCP header 
   in an IPv4 network are chosen for data hiding.
   </p>
-  <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-9.png"></img></center>
+  <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/fig-9.png"></img></center>
   <p align="center"><br>Figure IX. IP Datagram Steganography</p>
 </ul>
   
@@ -318,7 +318,7 @@ Within these techniques, spatial and transform domain techniques are mostly used
 <p align="justify">
 In this proposed system Cryptography and Steganography are merged together. The system first encrypts the secret message by using a very simple Symmetric Key Cryptography Algorithm by using the private key K generated by a key generating algorithm. Then in the second step, the secure encrypted secret message (ciphertext) is hidden as a payload inside the cover image by using a novel technique using the 3-3-2 LSB insertion method. For retrieval of the hidden message, the same reverse technique will be applied. The proposed system first generates the private key K and then encrypts the secret message in the first step.
 </p>
-<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-10.png"></img></center>
+<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/fig-10.png"></img></center>
 <p align="center">Figure X. Proposed method process diagram</p>
 <ul>
   <li>
@@ -333,7 +333,7 @@ In this proposed system Cryptography and Steganography are merged together. The 
     satisfied then move for the next 4 bits and do the same check again.<br>
   6. If K not found from the previous steps, then repeat the same process from step 1 to step 5.<br>
   </p>
-  <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-11.png"></img></center>
+  <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/fig-11.png"></img></center>
   <p align="center"><br>Figure XI. Private Key generation flowchart</p>
   <li>
     <b>Symmetric Key Cryptography Algorithm</b>
@@ -349,7 +349,7 @@ In this proposed system Cryptography and Steganography are merged together. The 
     4. Reverse all the 8-bit binary number(s).<br>
     5. Now the resultant binary set of numbers after the above operations is the secret encrypted cipher text, ready to use for second step.<br>
   </p>
-  <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-12.png"></img></center>
+  <center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/fig-12.png"></img></center>
   <p align="center"><br>Figure XII. Encryption flowchart</p>
   <li>
     <b>Decryption Algorithm</b>
@@ -366,7 +366,7 @@ In this proposed system Cryptography and Steganography are merged together. The 
 A hash based least significant bit technique is proposed in this paper. A color image is considered as a cover media and secret data is embedded in this cover media as payload. The proposed technique takes eight bits of secret data at a time and put them in LSB of RGB (Red, Green and Blue) pixel value of the cover image in 3-3-2 order respectively. Such that 3 pixels are embedded in red channel, 3 pixels are embedded in green channel, and 2 pixels are embedded in blue channel.<br>
 Suppose 240 is value of secret message and its equivalent 8 binary value is 11110101; then it is distributed in the order of 3-3-2 to be embedded in LSB of RGB pixels respectively. Suppose m represents the bit position within the pixel. Value of m=1,2,3 for red, m=4,1,2 for green, and m=3,4 for blue. So, after embedding the secret data in the particular pixel of cover image, The RGB pixel value of the stego image as below – Red (00100111), Green (11101010), Blue (11001000) The embedding positions of the eight bits out of the four (4) available bits of LSB is obtained in a cyclic order which increases the security of the technique compared to other LSB based techniques.<br>
 </p>
-<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/readme/fig-13.png"></img></center>
+<center><img src="https://github.com/aroyofficial/incognitobit/blob/main/images/fig-13.png"></img></center>
 <p align="center"><br>Figure XIII. 3-3-2 LSB Technique</p>
 <p align="justify">
 After embedding secret image in the cover image, it will become a stego image. The intended user follows the reverse steps to retrieve the secret data. The proposed 3-3-2 algorithm, for encoding and decoding are given in this section. Encoding technique and the decoding technique is given below.  
