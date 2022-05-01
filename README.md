@@ -1,9 +1,9 @@
+![](https://img.shields.io/github/license/aroyofficial/incognitobit)  ![](https://img.shields.io/github/contributors-anon/aroyofficial/incognitobit)  ![](https://img.shields.io/github/last-commit/aroyofficial/incognitobit)  ![](https://img.shields.io/github/issues-pr/aroyofficial/incognitobit)  ![](https://img.shields.io/github/issues-pr-closed-raw/aroyofficial/incognitobit)  ![](https://img.shields.io/github/commit-activity/w/aroyofficial/incognitobit) ![](https://img.shields.io/github/repo-size/aroyofficial/incognitobit)
 # Project IncognitoBit
 
 This project comes with a **_GUI_** using which users can hide any message within an image and also they can retrieve the message from a stego image (which contains a message). This project **_implements a secure steganographic algorithm_** which is described in this document.
 
-<a href="#documentation"><b>Click Here to see the documentation</b></a><br><br>
-![](https://img.shields.io/github/license/aroyofficial/incognitobit)  ![](https://img.shields.io/github/contributors-anon/aroyofficial/incognitobit)  ![](https://img.shields.io/github/last-commit/aroyofficial/incognitobit)  ![](https://img.shields.io/github/issues-pr/aroyofficial/incognitobit)  ![](https://img.shields.io/github/issues-pr-closed-raw/aroyofficial/incognitobit)  ![](https://img.shields.io/github/commit-activity/w/aroyofficial/incognitobit) ![](https://img.shields.io/github/repo-size/aroyofficial/incognitobit)
+<a href="#documentation"><b>Click Here to see the documentation</b></a>
 
 # How to install and run
 
