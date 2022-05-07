@@ -9,7 +9,11 @@ This project comes with a **_GUI_** using which users can hide any message withi
 
 > <b>Step 1</b>
 <pre>
-<a href="https://github.com/aroyofficial/incognitobit/archive/refs/heads/main.zip">Click here</a> to install the zip and unzip it in the local machine.
+<a href="https://github.com/aroyofficial/incognitobit/blob/main/IncognitoBit.exe">Click here</a> to install the <b>exe</b>.
+</pre>
+or
+<pre>
+<a href="https://github.com/aroyofficial/incognitobit/blob/main/IncognitoBit.zip">Click here</a> to install the <b>zip</b>.
 </pre>
 
 Also can clone this repository in the local machine by copying and pasting the anyone of the link given below in git bash
